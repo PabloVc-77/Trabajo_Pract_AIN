@@ -12,6 +12,7 @@ from google.adk.models.lite_llm import LiteLlm
 
 import datetime
 import feedparser
+import requests
 
 # --- Helpers ---
 def _parse_date(entry):
@@ -29,7 +30,7 @@ def _parse_date(entry):
             return None
 
 # --- Tools ---
-def get_bibliografia(theme: str, max_results=6):
+def get_bibliografia_arxiv(theme: str, max_results=6):
 
     from urllib.parse import quote_plus
 
@@ -57,6 +58,39 @@ def get_bibliografia(theme: str, max_results=6):
 
     return resultados
 
+def get_bibliografia_scholar(theme: str, max_results=6):
+    url = "https://api.semanticscholar.org/graph/v1/paper/search"
+    
+    params = {
+        "query": theme,
+        "limit": max_results,
+        "fields": "title,authors,year,abstract,url,citationCount"
+    }
+
+    response = requests.get(url, params=params)
+
+    if response.status_code != 200:
+        return {"error": "Error en la API"}
+
+    data = response.json()
+
+    resultados = []
+
+    for paper in data.get("data", []):
+
+        resultados.append({
+            "titulo": paper.get("title"),
+            "autores": [a["name"] for a in paper.get("authors", [])],
+            "año": paper.get("year"),
+            "resumen": paper.get("abstract"),
+            "url": paper.get("url"),
+            "citas": paper.get("citationCount", 0)
+        })
+
+    resultados.sort(key=lambda x: x["año"], reverse=True)
+
+    return resultados
+
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 
@@ -64,9 +98,10 @@ def get_salida(title: str, intro: str, state_art: str,
                desarrollo: str, ejemplos: str, conclusiones: str, referencias: str):
     import json
 
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M::%S")
-    pdf_path = f"salida_{timestamp}.pdf"
-    json_path = f"salida_{timestamp}.json"
+    salida = title.replace(' ', '-')
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+    pdf_path = f"{salida}_{timestamp}.pdf"
+    json_path = f"{salida}_{timestamp}.json"
 
     doc = SimpleDocTemplate(pdf_path)
     styles = getSampleStyleSheet()
@@ -141,7 +176,10 @@ root_agent = Agent(
     ),
     instruction=(
         "Eres un creador de documentos. SIEMPRE debes fundamentarte en herramientas.\n"
-        "Pasos: (1) llama a get_bibliografia(tema) para obtener fuentes.\n"
+        "Pasos:\n"
+        "(1) Obtener fuentes, llamar a todas las llamadas listadas \n"
+            "Llamar a get_bibliografia_arxiv(tema) para obtener algunas fuentes"
+            "Llama también a get_bibliografia_scholar(tema) para obtener más fuentes"
         "(2) en base al abstract de las fuentes decide las que sean de interes respecto del tema a tratar (Elige hasta 4 fuentes)\n"
         "(3) Mezcla las fuentes para crear un texto por cada apartado de la estructura estructura.\n"
             "Introducción\n"
@@ -155,5 +193,5 @@ root_agent = Agent(
         "(5) responde en español "
         "sin inventar información fuera de las fuentes."
     ),
-    tools=[get_bibliografia, get_salida],
+    tools=[get_bibliografia_arxiv, get_bibliografia_scholar ,get_salida],
 )

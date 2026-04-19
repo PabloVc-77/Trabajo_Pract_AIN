@@ -3,4 +3,4 @@ import os
 
 load_dotenv()  
 
-from ..agent import agent
+from . import agent
