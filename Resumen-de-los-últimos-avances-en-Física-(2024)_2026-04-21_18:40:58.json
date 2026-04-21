@@ -1,0 +1,29 @@
+{
+    "title": "Resumen de los últimos avances en Física (2024)",
+    "sections": [
+        {
+            "section_name": "Introducción",
+            "word_count": 102
+        },
+        {
+            "section_name": "Estado del arte",
+            "word_count": 222
+        },
+        {
+            "section_name": "Desarrollo",
+            "word_count": 344
+        },
+        {
+            "section_name": "Ejemplos",
+            "word_count": 170
+        },
+        {
+            "section_name": "Conclusiones",
+            "word_count": 117
+        }
+    ],
+    "total_words": 955,
+    "num_sections": 5,
+    "num_references": 5,
+    "pdf_path": "Resumen-de-los-últimos-avances-en-Física-(2024)_2026-04-21_18:40:58.pdf"
+}

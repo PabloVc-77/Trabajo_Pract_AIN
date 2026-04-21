@@ -3,27 +3,27 @@
     "sections": [
         {
             "section_name": "Introducción",
-            "word_count": 72
+            "word_count": 57
         },
         {
             "section_name": "Estado del arte",
-            "word_count": 127
+            "word_count": 123
         },
         {
             "section_name": "Desarrollo",
-            "word_count": 136
+            "word_count": 148
         },
         {
             "section_name": "Ejemplos",
-            "word_count": 86
+            "word_count": 110
         },
         {
             "section_name": "Conclusiones",
-            "word_count": 86
+            "word_count": 73
         }
     ],
-    "total_words": 507,
+    "total_words": 511,
     "num_sections": 6,
-    "num_references": 1,
-    "pdf_path": "salida_2026-04-19_19:47:58.pdf"
+    "num_references": 3,
+    "pdf_path": "Inteligencia-artificial-en-medicina_2026-04-21_18:28:07.pdf"
 }

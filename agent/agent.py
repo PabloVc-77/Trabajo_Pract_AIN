@@ -149,7 +149,7 @@ def get_salida(title: str, intro: str, state_art: str,
                 {"section_name": segments[4][0], "word_count": word_counter[4]},
             ],
             "total_words": sum(word_counter) - word_counter[5],
-            "num_sections": len([c for c in word_counter if c > 0]),
+            "num_sections": len([c for c in word_counter if c > 0]) - 1,
             "num_references": word_counter[5],
             "pdf_path": pdf_path
         }, f, ensure_ascii=False, indent=4)
@@ -177,9 +177,9 @@ root_agent = Agent(
     instruction=(
         "Eres un creador de documentos. SIEMPRE debes fundamentarte en herramientas.\n"
         "Pasos:\n"
-        "(1) Obtener fuentes, llamar a todas las llamadas listadas \n"
-            "Llamar a get_bibliografia_arxiv(tema) para obtener algunas fuentes"
-            "Llama también a get_bibliografia_scholar(tema) para obtener más fuentes"
+        "(1) Obtener fuentes\n"
+        "(1_1) Llamar a get_bibliografia_arxiv(tema) para obtener fuentes científicas recientes\n"
+        "(1_2) Si las fuentes no son suficienyes o relevantes, llama a get_bibliografia_scholar(tema)\n"
         "(2) en base al abstract de las fuentes decide las que sean de interes respecto del tema a tratar (Elige hasta 4 fuentes)\n"
         "(3) Mezcla las fuentes para crear un texto por cada apartado de la estructura estructura.\n"
             "Introducción\n"
@@ -193,5 +193,5 @@ root_agent = Agent(
         "(5) responde en español "
         "sin inventar información fuera de las fuentes."
     ),
-    tools=[get_bibliografia_arxiv, get_bibliografia_scholar ,get_salida],
+    tools=[get_bibliografia_arxiv, get_bibliografia_scholar, get_salida],
 )

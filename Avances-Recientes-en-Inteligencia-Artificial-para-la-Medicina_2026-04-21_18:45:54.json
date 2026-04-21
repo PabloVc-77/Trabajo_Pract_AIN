@@ -1,0 +1,29 @@
+{
+    "title": "Avances Recientes en Inteligencia Artificial para la Medicina",
+    "sections": [
+        {
+            "section_name": "Introducción",
+            "word_count": 95
+        },
+        {
+            "section_name": "Estado del arte",
+            "word_count": 145
+        },
+        {
+            "section_name": "Desarrollo",
+            "word_count": 118
+        },
+        {
+            "section_name": "Ejemplos",
+            "word_count": 99
+        },
+        {
+            "section_name": "Conclusiones",
+            "word_count": 76
+        }
+    ],
+    "total_words": 533,
+    "num_sections": 5,
+    "num_references": 1,
+    "pdf_path": "Avances-Recientes-en-Inteligencia-Artificial-para-la-Medicina_2026-04-21_18:45:54.pdf"
+}
