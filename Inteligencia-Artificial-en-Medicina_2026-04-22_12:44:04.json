@@ -1,0 +1,29 @@
+{
+    "title": "Inteligencia Artificial en Medicina",
+    "sections": [
+        {
+            "section_name": "Introducción",
+            "word_count": 64
+        },
+        {
+            "section_name": "Estado del arte",
+            "word_count": 133
+        },
+        {
+            "section_name": "Desarrollo",
+            "word_count": 98
+        },
+        {
+            "section_name": "Ejemplos",
+            "word_count": 99
+        },
+        {
+            "section_name": "Conclusiones",
+            "word_count": 105
+        }
+    ],
+    "total_words": 499,
+    "num_sections": 5,
+    "num_references": 4,
+    "pdf_path": "Inteligencia-Artificial-en-Medicina_2026-04-22_12:44:04.pdf"
+}

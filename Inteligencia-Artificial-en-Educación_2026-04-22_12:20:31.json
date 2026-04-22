@@ -1,0 +1,29 @@
+{
+    "title": "Inteligencia Artificial en Educación",
+    "sections": [
+        {
+            "section_name": "Introducción",
+            "word_count": 92
+        },
+        {
+            "section_name": "Estado del arte",
+            "word_count": 149
+        },
+        {
+            "section_name": "Desarrollo",
+            "word_count": 199
+        },
+        {
+            "section_name": "Ejemplos",
+            "word_count": 141
+        },
+        {
+            "section_name": "Conclusiones",
+            "word_count": 101
+        }
+    ],
+    "total_words": 682,
+    "num_sections": 5,
+    "num_references": 1,
+    "pdf_path": "Inteligencia-Artificial-en-Educación_2026-04-22_12:20:31.pdf"
+}

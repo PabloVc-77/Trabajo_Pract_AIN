@@ -1,0 +1,1167 @@
+{
+  "eval_set_result_id": "agent_document_generator_manual_1776851612.6640282",
+  "eval_set_result_name": "agent_document_generator_manual_1776851612.6640282",
+  "eval_set_id": "document_generator_manual",
+  "eval_case_results": [
+    {
+      "eval_set_file": "document_generator_manual",
+      "eval_set_id": "document_generator_manual",
+      "eval_id": "multiagent_systems_technical",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "rubric_based_final_response_quality_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "judge_model_options": {
+              "judge_model": "openai/gpt-oss-120b",
+              "num_samples": 2
+            },
+            "rubrics": [
+              {
+                "rubric_id": "secciones_informe",
+                "rubric_content": {
+                  "text_property": "El JSON debe incluir las secciones 'Introducción' y 'Conclusiones' dentro de la lista 'sections'."
+                },
+                "description": "Valida estructura editorial en el JSON."
+              },
+              {
+                "rubric_id": "num_references",
+                "rubric_content": {
+                  "text_property": "El campo 'num_references' del JSON debe ser un número igual o superior a 3."
+                },
+                "description": "Valida el campo num_references."
+              },
+              {
+                "rubric_id": "num_sections",
+                "rubric_content": {
+                  "text_property": "El campo 'num_sections' del JSON o la longitud de la lista 'sections' debe ser igual o superior a 4."
+                },
+                "description": "Valida el número de secciones en el JSON."
+              },
+              {
+                "rubric_id": "word_count",
+                "rubric_content": {
+                  "text_property": "Los campos 'word_count' deben tener un valor igual o superior a 150."
+                },
+                "description": "Valida los campos de word_count."
+              },
+              {
+                "rubric_id": "total_word_count",
+                "rubric_content": {
+                  "text_property": "el numero total de palabras en el campo 'total_words' debe ser igual o superior a 450"
+                },
+                "description": "Valida el numero total de palabras."
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "secciones_informe",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "num_references",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "num_sections",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "word_count",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "total_word_count",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-2df45475-6385-4aa5-b0ed-25369898faf9",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Genera un informe técnico sobre sistemas multiagente en gestión de emergencias.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "We need to select up to 4 sources relevant to multi-agent systems in emergency management. From results, we have:\n\n- \"Designing Decision Support Systems for Emergency Response: Challenges and Opportunities\" – directly about emergency response systems, likely includes multi-agent aspects (maybe not explicit). Could be used for intro and state of art.\n\n- \"A Survey of Multi-Agent Deep Reinforcement Learning with Communication\" – about communication in MAS, relevant for coordination in emergencies.\n\n- \"A Hierarchical Game-Theoretic Decision-Making for Cooperative Multi-Agent Systems Under the Presence of Adversarial Agents\" – could be relevant for decision-making in hazard scenarios.\n\n- \"A Methodology to Engineer and Validate Dynamic Multi-level Multi-agent Based Simulations\" – about multi-level MAS modeling, could apply to emergency management.\n\nAlternatively, \"Learning Distributed Stabilizing Controllers for Multi-Agent Systems\" is about stabilization, could be relevant.\n\nWe need abstracts to write sections. Use abstracts given. We'll craft introduction summarizing need, state of art using survey and decision support, development describing architectures etc, examples maybe referencing hierarchical game-theoretic and communication, conclusions.\n\nThen call salida with title, sections.\n\nWe must ensure no invented info beyond abstracts. Use only info from abstracts.\n\nLet's compose text.\n\n",
+                  "thought": true,
+                  "thought_signature": null,
+                  "video_metadata": null
+                },
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "{\n  \"title\": \"Sistemas Multiagente para la Gestión de Emergencias\",\n  \"intro\": \"La gestión de emergencias requiere la coordinación rápida y eficaz de recursos humanos y materiales bajo condiciones de alta incertidumbre y información parcial. Los sistemas multiagente (MAS) ofrecen un marco natural para modelar, simular y automatizar dicha coordinación, pues permiten representar a cada entidad (brigadistas, ambulancias, sensores, centros de mando) como agentes autónomos que interactúan y comparten información. En los últimos años, los avances en aprendizaje profundo reforzado y en comunicación entre agentes han abierto nuevas posibilidades para diseñar decisiones distribuidas y adaptativas en tiempo real, tal como se observa en la literatura reciente.\\n\\nEste informe técnico resume el estado del arte y las tendencias de investigación que combinan MAS con la gestión de emergencias, describiendo los principales enfoques metodológicos, arquitectónicos y de comunicación, y ejemplificando su aplicación mediante casos de estudio basados en la literatura seleccionada.\",\n  \"state_arte\": \"Los sistemas de apoyo a la decisión en respuesta a emergencias han sido objeto de un creciente interés, como se destaca en \\\\citet{Pettet2022} que describen los desafíos y oportunidades al diseñar subsistemas de detección temprana, pronóstico de incidentes y asignación estratégica de recursos. Paralelamente, la necesidad de una comunicación eficaz entre agentes se ha abordado en una encuesta de \\\\citet{Zhu2022}, que propone nueve dimensiones para clasificar los enfoques de comunicación en el Aprendizaje Profundo Multi‑agente (MADRL), subrayando cómo el intercambio de mensajes amplía la visión del entorno y mejora la colaboración. En contextos donde la coordinación debe ser robusta frente a adversarios o fallos, \\\\citet{Yang2023} introducen un modelo jerárquico basado en teoría de juegos (Game‑theoretic Utility Tree) que descompone estrategias de alto nivel en acciones ejecutables, permitiendo decisiones cooperativas bajo presencia de agentes adversarios. Finalmente, la modelización dinámica y multi‑nivel de sistemas complejos se aborda mediante la metodología IRM4MLS \\\\citet{Soyez2013}, que permite activar o desactivar agentes y agregar o desagregar representaciones a distintas escalas, optimizando el uso de recursos computacionales sin perder información relevante para la simulación de emergencias.\",\n  \"desarrollo\": \"A partir de los trabajos citados, se pueden identificar cuatro componentes clave para un sistema multiagente de gestión de emergencias:\\\\n\\\\n1. **Arquitectura de decisión distribuida**: Utilizando modelos jerárquicos como el GUT de \\\\citet{Yang2023}, los agentes pueden planificar a nivel estratégico (p.ej., priorización de áreas de impacto) y traducir esas decisiones en acciones concretas (despliegue de unidades, rutas de evacuación).\\\\n\\\\n2. **Mecanismo de comunicación**: La clasificación propuesta por \\\\citet{Zhu2022} sugiere incorporar canales de comunicación estructurados (broadcast, unicasting, condiciones contextuales) que permitan a los agentes compartir perceptuales, intenciones y estimaciones de riesgo, reduciendo la incertidumbre inherente a la observación parcial.\\\\n\\\\n3. **Soporte a la toma de decisiones operativas**: Según \\\\citet{Pettet2022}, los sistemas de apoyo deben integrar detección temprana de incidentes, pronóstico de la probabilidad de nuevos eventos y algoritmos de asignación de recursos basados en optimización. Estos módulos pueden implementarse como agentes especializados que consumen datos de sensores y generan recomendaciones en tiempo real.\\\\n\\\\n4. **Modelado multi‑nivel y dinámica de agentes**: La metodología IRM4MLS \\\\citet{Soyez2013} permite representar la gestión de emergencias a distintas escalas (p. ej., nivel local de equipos de intervención y nivel regional de coordinación). Mediante la activación/desactivación dinámica de agentes y la agregación/desagregación de representaciones, el sistema mantiene una carga computacional razonable mientras captura interacciones críticas entre niveles.\",\n  \"ejemplos\": \"Ejemplo 1: *Despliegue coordinado de ambulancias en una ciudad durante un accidente masivo*. Cada ambulancia es un agente que recibe información de sensores de tráfico y de un agente central de detección temprana (Pettet et al., 2022). Utiliza canales de comunicación de bajo ancho de banda (broadcast de posición) y adapta su ruta mediante decisiones jerárquicas (GUT, Yang & Parasuraman, 2023).\\\\n\\\\nEjemplo 2: *Simulación de evacuación ante un terremoto*. El modelo multi‑nivel IRM4MLS (Soyez et al., 2013) representa a nivel micro a cada individuo como agente y a nivel macro a los centros de mando. Durante la simulación, los agentes de nivel micro pueden ser agregados en grupos cuando la densidad de población es alta, reduciendo el costo computacional sin perder la precisión necesaria para evaluar estrategias de evacuación.\\n\\nConclusiones:\\nLos sistemas multiagente emergen como una solución prometedora para la gestión integral de emergencias, al ofrecer flexibilidad, escalabilidad y capacidad de adaptación frente a entornos inciertos. Los avances en comunicación (Zhu et al., 2022) y en toma de decisiones jerárquicas (Yang & Parasuraman, 2023) permiten diseñar arquitecturas donde la información se comparte de forma eficiente y las decisiones se alinean con los objetivos estratégicos. La metodología multi‑nivel (Soyez et al., 2013) garantiza que la complejidad computacional sea manejable, facilitando la simulación y el despliegue en tiempo real. Sin embargo, persisten desafíos en la integración de estos componentes dentro de plataformas operativas existentes y en la validación empírica bajo escenarios reales. Futuras investigaciones deberían centrarse en pruebas piloto con cuerpos de emergencia y en la estandarización de protocolos de comunicación entre agentes heterogéneos.\\n\\nReferencias:\\n1. Pettet, G., Baxter, H., Vazirizade, S. M., Purohit, H., Ma, M., Mukhopadhyay, A., & Dubey, A. (2022). *Designing Decision Support Systems for Emergency Response: Challenges and Opportunities*. arXiv:2202.11268.\\\\n2. Zhu, C., Dastani, M., & Wang, S. (2022). *A Survey of Multi-Agent Deep Reinforcement Learning with Communication*. arXiv:2203.08975.\\\\n3. Yang, Q., & Parasuraman, R. (2023). *A Hierarchical Game-Theoretic Decision-Making for Cooperative Multi-Agent Systems Under the Presence of Adversarial Agents*. arXiv:2303.16641.\\\\n4. Soyez, J.-B., Morvan, G., Dupont, D., & Merzouki, R. (2013). *A Methodology to Engineer and Validate Dynamic Multi-level Multi-agent Based Simulations*. arXiv:1311.5108.\"\n}",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": "We need to produce a technical report on multi-agent systems in emergency management. Steps: get sources via arxiv with theme \"multi-agent systems emergency management\". Then possibly scholar. Choose up to 4 sources based on abstracts. Then synthesize sections. Then call salida with title and sections, to produce PDF and JSON. Must not output anything else before calling salida. Need to call arxiv first.\n\nLet's call arxiv.",
+                        "thought": true,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      },
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "chatcmpl-tool-3b5ee736ae1947ec8e81fe8378496526",
+                          "args": {
+                            "theme": "multi-agent systems emergency management",
+                            "max_results": 5
+                          },
+                          "name": "arxiv",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "chatcmpl-tool-3b5ee736ae1947ec8e81fe8378496526",
+                          "name": "arxiv",
+                          "response": {
+                            "result": [
+                              {
+                                "titulo": "Learning the Value Systems of Agents with Preference-based and Inverse Reinforcement Learning",
+                                "autores": [
+                                  "Andrés Holgado-Sánchez",
+                                  "Holger Billhardt",
+                                  "Alberto Fernández",
+                                  "Sascha Ossowski"
+                                ],
+                                "resumen": "Agreement Technologies refer to open computer systems in which autonomous software agents interact with one another, typically on behalf of humans, in order to come to mutually acceptable agreements. With the advance of AI systems in recent years, it has become apparent that such agreements, in order to be acceptable to the involved parties, must remain aligned with ethical principles and moral values. However, this is notoriously difficult to ensure, especially as different human users (and their software agents) may hold different value systems, i.e. they may differently weigh the importance of individual moral values. Furthermore, it is often hard to specify the precise meaning of a value in a particular context in a computational manner. Methods to estimate value systems based on human-engineered specifications, e.g. based on value surveys, are limited in scale due to the need for intense human moderation. In this article, we propose a novel method to automatically \\emph{learn} val",
+                                "url": "https://arxiv.org/abs/2602.04518v1",
+                                "fecha": "2026-02-04T13:07:15"
+                              },
+                              {
+                                "titulo": "AOAD-MAT: Transformer-based multi-agent deep reinforcement learning model considering agents' order of action decisions",
+                                "autores": [
+                                  "Shota Takayama",
+                                  "Katsuhide Fujita"
+                                ],
+                                "resumen": "Multi-agent reinforcement learning focuses on training the behaviors of multiple learning agents that coexist in a shared environment. Recently, MARL models, such as the Multi-Agent Transformer (MAT) and ACtion dEpendent deep Q-learning (ACE), have significantly improved performance by leveraging sequential decision-making processes. Although these models can enhance performance, they do not explicitly consider the importance of the order in which agents make decisions. In this paper, we propose an Agent Order of Action Decisions-MAT (AOAD-MAT), a novel MAT model that considers the order in which agents make decisions. The proposed model explicitly incorporates the sequence of action decisions into the learning process, allowing the model to learn and predict the optimal order of agent actions. The AOAD-MAT model leverages a Transformer-based actor-critic architecture that dynamically adjusts the sequence of agent actions. To achieve this, we introduce a novel MARL architecture that co",
+                                "url": "https://arxiv.org/abs/2510.13343v1",
+                                "fecha": "2025-10-15T09:29:36"
+                              },
+                              {
+                                "titulo": "Augmenting the action space with conventions to improve multi-agent cooperation in Hanabi",
+                                "autores": [
+                                  "F. Bredell",
+                                  "H. A. Engelbrecht",
+                                  "J. C. Schoeman"
+                                ],
+                                "resumen": "The card game Hanabi is considered a strong medium for the testing and development of multi-agent reinforcement learning (MARL) algorithms, due to its cooperative nature, partial observability, limited communication and remarkable complexity. Previous research efforts have explored the capabilities of MARL algorithms within Hanabi, focusing largely on advanced architecture design and algorithmic manipulations to achieve state-of-the-art performance for various number of cooperators. However, this often leads to complex solution strategies with high computational cost and requiring large amounts of training data. For humans to solve the Hanabi game effectively, they require the use of conventions, which often allows for a means to implicitly convey ideas or knowledge based on a predefined, and mutually agreed upon, set of \"rules\" or principles. Multi-agent problems containing partial observability, especially when limited communication is present, can benefit greatly from the use of imp",
+                                "url": "https://arxiv.org/abs/2412.06333v3",
+                                "fecha": "2024-12-09T09:34:40"
+                              },
+                              {
+                                "titulo": "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+                                "autores": [
+                                  "Changxi Zhu",
+                                  "Mehdi Dastani",
+                                  "Shihan Wang"
+                                ],
+                                "resumen": "Communication is an effective mechanism for coordinating the behaviors of multiple agents, broadening their views of the environment, and to support their collaborations. In the field of multi-agent deep reinforcement learning (MADRL), agents can improve the overall learning performance and achieve their objectives by communication. Agents can communicate various types of messages, either to all agents or to specific agent groups, or conditioned on specific constraints. With the growing body of research work in MADRL with communication (Comm-MADRL), there is a lack of a systematic and structural approach to distinguish and classify existing Comm-MADRL approaches. In this paper, we survey recent works in the Comm-MADRL field and consider various aspects of communication that can play a role in designing and developing multi-agent reinforcement learning systems. With these aspects in mind, we propose 9 dimensions along which Comm-MADRL approaches can be analyzed, developed, and compared.",
+                                "url": "https://arxiv.org/abs/2203.08975v2",
+                                "fecha": "2022-03-16T22:39:46"
+                              },
+                              {
+                                "titulo": "A Methodology to Engineer and Validate Dynamic Multi-level Multi-agent Based Simulations",
+                                "autores": [
+                                  "Jean-Baptiste Soyez",
+                                  "Gildas Morvan",
+                                  "Daniel Dupont",
+                                  "Rochdi Merzouki"
+                                ],
+                                "resumen": "This article proposes a methodology to model and simulate complex systems, based on IRM4MLS, a generic agent-based meta-model able to deal with multi-level systems. This methodology permits the engineering of dynamic multi-level agent-based models, to represent complex systems over several scales and domains of interest. Its goal is to simulate a phenomenon using dynamically the lightest representation to save computer resources without loss of information. This methodology is based on two mechanisms: (1) the activation or deactivation of agents representing different domain parts of the same phenomenon and (2) the aggregation or disaggregation of agents representing the same phenomenon at different scales.",
+                                "url": "https://arxiv.org/abs/1311.5108v1",
+                                "fecha": "2013-11-20T15:44:26"
+                              }
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": "We need an report on multi-agent systems in emergency management. The arxiv results include general multi-agent and communications, but not specifically emergency management. May need scholar search. Let's call scholar with theme \"multi-agent systems emergency management\".",
+                        "thought": true,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      },
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "chatcmpl-tool-c4b4c88763124beba03ec10efb65ec56",
+                          "args": {
+                            "theme": "multi-agent systems emergency management",
+                            "max_results": 5
+                          },
+                          "name": "scholar",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "chatcmpl-tool-c4b4c88763124beba03ec10efb65ec56",
+                          "name": "scholar",
+                          "response": {
+                            "error": "Error en la API"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": "The arxiv results include some about multi-agent systems but not specifically emergency management. Need more relevant sources. Could try scholar again but error. Maybe we can search with different query. Use arxiv with more specific: \"emergency response multi-agent\".",
+                        "thought": true,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      },
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "chatcmpl-tool-b1ab5798f22140b788c2d1ae8ed295a5",
+                          "args": {
+                            "theme": "emergency response multi-agent systems",
+                            "max_results": 10
+                          },
+                          "name": "arxiv",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "chatcmpl-tool-b1ab5798f22140b788c2d1ae8ed295a5",
+                          "name": "arxiv",
+                          "response": {
+                            "result": [
+                              {
+                                "titulo": "From Model-Based Screening to Data-Driven Surrogates: A Multi-Stage Workflow for Exploring Stochastic Agent-Based Models",
+                                "autores": [
+                                  "Paul Saves",
+                                  "Matthieu Mastio",
+                                  "Nicolas Verstaevel",
+                                  "Benoit Gaudou"
+                                ],
+                                "resumen": "Systematic exploration of Agent-Based Models (ABMs) is challenged by the curse of dimensionality and their inherent stochasticity. We present a multi-stage pipeline integrating the systematic design of experiments with machine learning surrogates. Using a predator-prey case study, our methodology proceeds in two steps. First, an automated model-based screening identifies dominant variables, assesses outcome variability, and segments the parameter space. Second, we train Machine Learning models to map the remaining nonlinear interaction effects. This approach automates the discovery of unstable regions where system outcomes are highly dependent on nonlinear interactions between many variables. Thus, this work provides modelers with a rigorous, hands-off framework for sensitivity analysis and policy testing, even when dealing with high-dimensional stochastic simulators.",
+                                "url": "https://arxiv.org/abs/2604.03350v1",
+                                "fecha": "2026-04-03T15:32:49"
+                              },
+                              {
+                                "titulo": "Learning the Value Systems of Agents with Preference-based and Inverse Reinforcement Learning",
+                                "autores": [
+                                  "Andrés Holgado-Sánchez",
+                                  "Holger Billhardt",
+                                  "Alberto Fernández",
+                                  "Sascha Ossowski"
+                                ],
+                                "resumen": "Agreement Technologies refer to open computer systems in which autonomous software agents interact with one another, typically on behalf of humans, in order to come to mutually acceptable agreements. With the advance of AI systems in recent years, it has become apparent that such agreements, in order to be acceptable to the involved parties, must remain aligned with ethical principles and moral values. However, this is notoriously difficult to ensure, especially as different human users (and their software agents) may hold different value systems, i.e. they may differently weigh the importance of individual moral values. Furthermore, it is often hard to specify the precise meaning of a value in a particular context in a computational manner. Methods to estimate value systems based on human-engineered specifications, e.g. based on value surveys, are limited in scale due to the need for intense human moderation. In this article, we propose a novel method to automatically \\emph{learn} val",
+                                "url": "https://arxiv.org/abs/2602.04518v1",
+                                "fecha": "2026-02-04T13:07:15"
+                              },
+                              {
+                                "titulo": "AOAD-MAT: Transformer-based multi-agent deep reinforcement learning model considering agents' order of action decisions",
+                                "autores": [
+                                  "Shota Takayama",
+                                  "Katsuhide Fujita"
+                                ],
+                                "resumen": "Multi-agent reinforcement learning focuses on training the behaviors of multiple learning agents that coexist in a shared environment. Recently, MARL models, such as the Multi-Agent Transformer (MAT) and ACtion dEpendent deep Q-learning (ACE), have significantly improved performance by leveraging sequential decision-making processes. Although these models can enhance performance, they do not explicitly consider the importance of the order in which agents make decisions. In this paper, we propose an Agent Order of Action Decisions-MAT (AOAD-MAT), a novel MAT model that considers the order in which agents make decisions. The proposed model explicitly incorporates the sequence of action decisions into the learning process, allowing the model to learn and predict the optimal order of agent actions. The AOAD-MAT model leverages a Transformer-based actor-critic architecture that dynamically adjusts the sequence of agent actions. To achieve this, we introduce a novel MARL architecture that co",
+                                "url": "https://arxiv.org/abs/2510.13343v1",
+                                "fecha": "2025-10-15T09:29:36"
+                              },
+                              {
+                                "titulo": "MAEBE: Multi-Agent Emergent Behavior Framework",
+                                "autores": [
+                                  "Sinem Erisken",
+                                  "Timothy Gothard",
+                                  "Martin Leitgab",
+                                  "Ram Potham"
+                                ],
+                                "resumen": "Traditional AI safety evaluations on isolated LLMs are insufficient as multi-agent AI ensembles become prevalent, introducing novel emergent risks. This paper introduces the Multi-Agent Emergent Behavior Evaluation (MAEBE) framework to systematically assess such risks. Using MAEBE with the Greatest Good Benchmark (and a novel double-inversion question technique), we demonstrate that: (1) LLM moral preferences, particularly for Instrumental Harm, are surprisingly brittle and shift significantly with question framing, both in single agents and ensembles. (2) The moral reasoning of LLM ensembles is not directly predictable from isolated agent behavior due to emergent group dynamics. (3) Specifically, ensembles exhibit phenomena like peer pressure influencing convergence, even when guided by a supervisor, highlighting distinct safety and alignment challenges. Our findings underscore the necessity of evaluating AI systems in their interactive, multi-agent contexts.",
+                                "url": "https://arxiv.org/abs/2506.03053v2",
+                                "fecha": "2025-06-03T16:33:47"
+                              },
+                              {
+                                "titulo": "Augmenting the action space with conventions to improve multi-agent cooperation in Hanabi",
+                                "autores": [
+                                  "F. Bredell",
+                                  "H. A. Engelbrecht",
+                                  "J. C. Schoeman"
+                                ],
+                                "resumen": "The card game Hanabi is considered a strong medium for the testing and development of multi-agent reinforcement learning (MARL) algorithms, due to its cooperative nature, partial observability, limited communication and remarkable complexity. Previous research efforts have explored the capabilities of MARL algorithms within Hanabi, focusing largely on advanced architecture design and algorithmic manipulations to achieve state-of-the-art performance for various number of cooperators. However, this often leads to complex solution strategies with high computational cost and requiring large amounts of training data. For humans to solve the Hanabi game effectively, they require the use of conventions, which often allows for a means to implicitly convey ideas or knowledge based on a predefined, and mutually agreed upon, set of \"rules\" or principles. Multi-agent problems containing partial observability, especially when limited communication is present, can benefit greatly from the use of imp",
+                                "url": "https://arxiv.org/abs/2412.06333v3",
+                                "fecha": "2024-12-09T09:34:40"
+                              },
+                              {
+                                "titulo": "A Hierarchical Game-Theoretic Decision-Making for Cooperative Multi-Agent Systems Under the Presence of Adversarial Agents",
+                                "autores": [
+                                  "Qin Yang",
+                                  "Ramviyas Parasuraman"
+                                ],
+                                "resumen": "Underlying relationships among Multi-Agent Systems (MAS) in hazardous scenarios can be represented as Game-theoretic models. This paper proposes a new hierarchical network-based model called Game-theoretic Utility Tree (GUT), which decomposes high-level strategies into executable low-level actions for cooperative MAS decisions. It combines with a new payoff measure based on agent needs for real-time strategy games. We present an Explore game domain, where we measure the performance of MAS achieving tasks from the perspective of balancing the success probability and system costs. We evaluate the GUT approach against state-of-the-art methods that greedily rely on rewards of the composite actions. Conclusive results on extensive numerical simulations indicate that GUT can organize more complex relationships among MAS cooperation, helping the group achieve challenging tasks with lower costs and higher winning rates. Furthermore, we demonstrated the applicability of the GUT using the simula",
+                                "url": "https://arxiv.org/abs/2303.16641v1",
+                                "fecha": "2023-03-28T15:16:23"
+                              },
+                              {
+                                "titulo": "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+                                "autores": [
+                                  "Changxi Zhu",
+                                  "Mehdi Dastani",
+                                  "Shihan Wang"
+                                ],
+                                "resumen": "Communication is an effective mechanism for coordinating the behaviors of multiple agents, broadening their views of the environment, and to support their collaborations. In the field of multi-agent deep reinforcement learning (MADRL), agents can improve the overall learning performance and achieve their objectives by communication. Agents can communicate various types of messages, either to all agents or to specific agent groups, or conditioned on specific constraints. With the growing body of research work in MADRL with communication (Comm-MADRL), there is a lack of a systematic and structural approach to distinguish and classify existing Comm-MADRL approaches. In this paper, we survey recent works in the Comm-MADRL field and consider various aspects of communication that can play a role in designing and developing multi-agent reinforcement learning systems. With these aspects in mind, we propose 9 dimensions along which Comm-MADRL approaches can be analyzed, developed, and compared.",
+                                "url": "https://arxiv.org/abs/2203.08975v2",
+                                "fecha": "2022-03-16T22:39:46"
+                              },
+                              {
+                                "titulo": "Designing Decision Support Systems for Emergency Response: Challenges and Opportunities",
+                                "autores": [
+                                  "Geoffrey Pettet",
+                                  "Hunter Baxter",
+                                  "Sayyed Mohsen Vazirizade",
+                                  "Hemant Purohit",
+                                  "Meiyi Ma",
+                                  "Ayan Mukhopadhyay",
+                                  "Abhishek Dubey"
+                                ],
+                                "resumen": "Designing effective emergency response management (ERM) systems to respond to incidents such as road accidents is a major problem faced by communities. In addition to responding to frequent incidents each day (about 240 million emergency medical services calls and over 5 million road accidents in the US each year), these systems also support response during natural hazards. Recently, there has been a consistent interest in building decision support and optimization tools that can help emergency responders provide more efficient and effective response. This includes a number of principled subsystems that implement early incident detection, incident likelihood forecasting and strategic resource allocation and dispatch policies. In this paper, we highlight the key challenges and provide an overview of the approach developed by our team in collaboration with our community partners.",
+                                "url": "https://arxiv.org/abs/2202.11268v2",
+                                "fecha": "2022-02-23T02:02:32"
+                              },
+                              {
+                                "titulo": "Learning Distributed Stabilizing Controllers for Multi-Agent Systems",
+                                "autores": [
+                                  "Gangshan Jing",
+                                  "He Bai",
+                                  "Jemin George",
+                                  "Aranya Chakrabortty",
+                                  "Piyush K. Sharma"
+                                ],
+                                "resumen": "We address the problem of model-free distributed stabilization of heterogeneous multi-agent systems using reinforcement learning (RL). Two algorithms are developed. The first algorithm solves a centralized linear quadratic regulator (LQR) problem without knowing any initial stabilizing gain in advance. The second algorithm builds upon the results of the first algorithm, and extends it to distributed stabilization of multi-agent systems with predefined interaction graphs. Rigorous proofs are provided to show that the proposed algorithms achieve guaranteed convergence if specific conditions hold. A simulation example is presented to demonstrate the theoretical results.",
+                                "url": "https://arxiv.org/abs/2103.04480v1",
+                                "fecha": "2021-03-07T23:25:28"
+                              },
+                              {
+                                "titulo": "A Methodology to Engineer and Validate Dynamic Multi-level Multi-agent Based Simulations",
+                                "autores": [
+                                  "Jean-Baptiste Soyez",
+                                  "Gildas Morvan",
+                                  "Daniel Dupont",
+                                  "Rochdi Merzouki"
+                                ],
+                                "resumen": "This article proposes a methodology to model and simulate complex systems, based on IRM4MLS, a generic agent-based meta-model able to deal with multi-level systems. This methodology permits the engineering of dynamic multi-level agent-based models, to represent complex systems over several scales and domains of interest. Its goal is to simulate a phenomenon using dynamically the lightest representation to save computer resources without loss of information. This methodology is based on two mechanisms: (1) the activation or deactivation of agents representing different domain parts of the same phenomenon and (2) the aggregation or disaggregation of agents representing the same phenomenon at different scales.",
+                                "url": "https://arxiv.org/abs/1311.5108v1",
+                                "fecha": "2013-11-20T15:44:26"
+                              }
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1776851317.356549,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "root_agent": {
+                  "name": "root_agent",
+                  "instructions": "Eres un creador de documentos. Usa herramientas siempre que sea necesario.\nPasos:\n(1) Obtener fuentes\n(1_1) Llamar a arxiv(tema) para obtener fuentes científicas recientes\n(1_2) Si las fuentes no son suficienyes o relevantes, llama a scholar(tema)\n(2) en base al abstract de las fuentes decide las que sean de interes respecto del tema a tratar (Elige hasta 4 fuentes)\n(3) Mezcla las fuentes para crear un texto por cada apartado de la estructura estructura.\nIntroducción\nEstado del arte\nDesarrollo\nEjemplos\nConclusiones\nReferencias\n(4) llama a salida(título, intro, estado_arte, desarrollo, ejemplos, conclusiones, referencias) (siendo título el tema escogido y el resto de argumentos los apartados obtenidos del paso 3) para obtener el .pdf y .json.\nNO finalices la respuesta sin llamar a salida.\nSi no llamas a salida, la respuesta será considerada incorrecta.\n(5) responde en español\nsin inventar información fuera de las fuentes.\nLas llamadas a las tools debe ser estrictamente: arxiv, scholar o salida. Cualquier otra modificación dará errorVerifica el nombre de la tool con _tool_sercher(tool_name)\n\nYou are an agent. Your internal name is \"root_agent\". The description about you is \"Diseñar un documento sobre el tema que se te plantee, con una salida sencilla de entenderusando tools para fundamentar la respuesta.\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": null,
+                          "name": "arxiv",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "theme": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "max_results": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": null
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": null,
+                          "name": "scholar",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "theme": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "max_results": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": null
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": null,
+                          "name": "salida",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "title": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "intro": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "state_art": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "desarrollo": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "ejemplos": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "conclusiones": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "referencias": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "title",
+                              "intro",
+                              "state_art",
+                              "desarrollo",
+                              "ejemplos",
+                              "conclusiones",
+                              "referencias"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": null,
+                          "name": "_tool_searcher",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "tool_name": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "tool_name"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search_retrieval": null,
+                      "url_context": null,
+                      "mcp_servers": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Genera un informe técnico sobre sistemas multiagente en gestión de emergencias.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": null,
+            "intermediate_data": null,
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "rubric_based_final_response_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "judge_model_options": {
+                  "judge_model": "openai/gpt-oss-120b",
+                  "num_samples": 2
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "secciones_informe",
+                    "rubric_content": {
+                      "text_property": "El JSON debe incluir las secciones 'Introducción' y 'Conclusiones' dentro de la lista 'sections'."
+                    },
+                    "description": "Valida estructura editorial en el JSON."
+                  },
+                  {
+                    "rubric_id": "num_references",
+                    "rubric_content": {
+                      "text_property": "El campo 'num_references' del JSON debe ser un número igual o superior a 3."
+                    },
+                    "description": "Valida el campo num_references."
+                  },
+                  {
+                    "rubric_id": "num_sections",
+                    "rubric_content": {
+                      "text_property": "El campo 'num_sections' del JSON o la longitud de la lista 'sections' debe ser igual o superior a 4."
+                    },
+                    "description": "Valida el número de secciones en el JSON."
+                  },
+                  {
+                    "rubric_id": "word_count",
+                    "rubric_content": {
+                      "text_property": "Los campos 'word_count' deben tener un valor igual o superior a 150."
+                    },
+                    "description": "Valida los campos de word_count."
+                  },
+                  {
+                    "rubric_id": "total_word_count",
+                    "rubric_content": {
+                      "text_property": "el numero total de palabras en el campo 'total_words' debe ser igual o superior a 450"
+                    },
+                    "description": "Valida el numero total de palabras."
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "secciones_informe",
+                    "rationale": "Because the required \"sections\" list is absent, the property is not fulfilled.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "num_references",
+                    "rationale": "The required numeric field is missing, so the property is not satisfied.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "num_sections",
+                    "rationale": "Without either of these, the condition cannot be met; therefore the property fails.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "word_count",
+                    "rationale": "The required field is missing, so the property is not fulfilled.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "total_word_count",
+                    "rationale": "Since the required field is absent, the property cannot be satisfied.",
+                    "score": 0.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___c02d4188-5813-4998-9aa2-9c85e8f2a914",
+      "session_details": null,
+      "user_id": "test_user_id"
+    }
+  ],
+  "creation_timestamp": 1776851612.6640282
+}

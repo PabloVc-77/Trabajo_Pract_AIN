@@ -29,7 +29,7 @@ def _parse_date(entry):
         except Exception:
             return None
         
-def _tool_sercher(tool_name: str) -> str:
+def _tool_searcher(tool_name: str) -> str:
     if "arxiv" in tool_name:
         return "archiv"
     elif "scholar" in tool_name:
@@ -145,9 +145,7 @@ def salida(title: str, intro: str, state_art: str,
 
     doc.build(story)
 
-    # JSON
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump({
+    data = {
             "title": title,
             "sections": [
                 {"section_name": segments[0][0], "word_count": word_counter[0]},
@@ -160,12 +158,17 @@ def salida(title: str, intro: str, state_art: str,
             "num_sections": len([c for c in word_counter if c > 0]) - 1,
             "num_references": word_counter[5],
             "pdf_path": pdf_path
-        }, f, ensure_ascii=False, indent=4)
+        }
 
-    return {
-        "pdf": pdf_path,
-        "json": json_path
-    }
+    # JSON
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+    return data
+    #{
+    #    "pdf": pdf_path,
+    #    "json": json_path
+    #}
 
 # ---------------------------
 # Root agent
@@ -204,5 +207,5 @@ root_agent = Agent(
         "Las llamadas a las tools debe ser estrictamente: arxiv, scholar o salida. Cualquier otra modificación dará error"
         "Verifica el nombre de la tool con _tool_sercher(tool_name)"
     ),
-    tools=[arxiv, scholar, salida, _tool_sercher],
+    tools=[arxiv, scholar, salida, _tool_searcher],
 )
