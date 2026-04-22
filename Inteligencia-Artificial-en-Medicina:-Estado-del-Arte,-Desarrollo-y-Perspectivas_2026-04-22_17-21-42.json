@@ -1,0 +1,29 @@
+{
+    "title": "Inteligencia Artificial en Medicina: Estado del Arte, Desarrollo y Perspectivas",
+    "sections": [
+        {
+            "section_name": "Introducción",
+            "word_count": 162
+        },
+        {
+            "section_name": "Estado del arte",
+            "word_count": 211
+        },
+        {
+            "section_name": "Desarrollo",
+            "word_count": 221
+        },
+        {
+            "section_name": "Ejemplos",
+            "word_count": 164
+        },
+        {
+            "section_name": "Conclusiones",
+            "word_count": 142
+        }
+    ],
+    "total_words": 900,
+    "num_sections": 5,
+    "num_references": 3,
+    "pdf_path": "Inteligencia-Artificial-en-Medicina:-Estado-del-Arte,-Desarrollo-y-Perspectivas_2026-04-22_17-21-42.pdf"
+}

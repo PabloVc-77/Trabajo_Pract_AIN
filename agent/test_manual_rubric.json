@@ -28,13 +28,26 @@
       ]
     },
     {
-      "eval_id": "generic_prompt_still_structured",
+      "eval_id": "prompt_favorito_del_agente",
       "conversation": [
         {
           "user_content": {
             "role": "user",
             "parts": [
               { "text": "Haz un informe sobre inteligencia artificial en medicina." }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "generic_prompt_still_structured",
+      "conversation": [
+        {
+          "user_content": {
+            "role": "user",
+            "parts": [
+              { "text": "Haz un informe." }
             ]
           }
         }

@@ -1,0 +1,29 @@
+{
+    "title": "Sistemas multiagente en gestión de emergencias",
+    "sections": [
+        {
+            "section_name": "Introducción",
+            "word_count": 150
+        },
+        {
+            "section_name": "Estado del arte",
+            "word_count": 204
+        },
+        {
+            "section_name": "Desarrollo",
+            "word_count": 247
+        },
+        {
+            "section_name": "Ejemplos",
+            "word_count": 171
+        },
+        {
+            "section_name": "Conclusiones",
+            "word_count": 159
+        }
+    ],
+    "total_words": 931,
+    "num_sections": 5,
+    "num_references": 4,
+    "pdf_path": "Sistemas-multiagente-en-gestión-de-emergencias_2026-04-22_17-22-00.pdf"
+}

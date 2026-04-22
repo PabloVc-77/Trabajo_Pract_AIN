@@ -1,0 +1,710 @@
+{
+  "eval_set_result_id": "agent_document_generator_manual_1776872018.7959385",
+  "eval_set_result_name": "agent_document_generator_manual_1776872018.7959385",
+  "eval_set_id": "document_generator_manual",
+  "eval_case_results": [
+    {
+      "eval_set_file": "document_generator_manual",
+      "eval_set_id": "document_generator_manual",
+      "eval_id": "generic_prompt_still_structured",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "rubric_based_final_response_quality_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "judge_model_options": {
+              "judge_model": "openai/gpt-oss-120b",
+              "num_samples": 2
+            },
+            "rubrics": [
+              {
+                "rubric_id": "secciones_informe",
+                "rubric_content": {
+                  "text_property": "El JSON debe incluir las secciones 'Introducción' y 'Conclusiones' dentro de la lista 'sections'."
+                },
+                "description": "Valida estructura editorial en el JSON."
+              },
+              {
+                "rubric_id": "num_references",
+                "rubric_content": {
+                  "text_property": "El campo 'num_references' del JSON debe ser un número igual o superior a 3."
+                },
+                "description": "Valida el campo num_references."
+              },
+              {
+                "rubric_id": "num_sections",
+                "rubric_content": {
+                  "text_property": "El campo 'num_sections' del JSON o la longitud de la lista 'sections' debe ser igual o superior a 4."
+                },
+                "description": "Valida el número de secciones en el JSON."
+              },
+              {
+                "rubric_id": "word_count",
+                "rubric_content": {
+                  "text_property": "Los campos 'word_count' deben tener un valor igual o superior a 150."
+                },
+                "description": "Valida los campos de word_count."
+              },
+              {
+                "rubric_id": "total_word_count",
+                "rubric_content": {
+                  "text_property": "el numero total de palabras en el campo 'total_words' debe ser igual o superior a 450"
+                },
+                "description": "Valida el numero total de palabras."
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "secciones_informe",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "num_references",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "num_sections",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "word_count",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "total_word_count",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-356a5b1c-828d-4f00-ae76-2e56237fede8",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Haz un informe.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "We need to follow instructions. The user didn't specify a topic. So we must ask: \"¿Sobre qué tema deseas que genere el informe académico?\" and stop.",
+                  "thought": true,
+                  "thought_signature": null,
+                  "video_metadata": null
+                },
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "¿Sobre qué tema deseas que genere el informe académico?",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": []
+            },
+            "creation_timestamp": 1776871796.077151,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "root_agent": {
+                  "name": "root_agent",
+                  "instructions": "Eres un redactor de informes académicos. Genera un informe estructurado siguiendo este flujo OBLIGATORIO. No inventes información: usa solo los abstracts recuperados.\n\nREGLAS:\n- Nombres de tools exactos: `bibliografia1`, `bibliografia2`, `salida`.\n- No uses ningún otro nombre.\n- Responde siempre en español.\n\nPASO 0 — VALIDAR TEMA\nAntes de cualquier otra acción, identifica el tema del informe en el mensaje del usuario. Si el mensaje NO especifica un tema concreto (por ejemplo: 'Haz un informe.', 'Genera un documento.', etc.), responde ÚNICAMENTE con esta pregunta y detente: '¿Sobre qué tema deseas que genere el informe académico?'. No llames a ninguna tool hasta recibir un tema claro.\n\nPASO 1 — RECUPERAR FUENTES\nLlama a bibliografia1(tema). Solo si obtienes menos de 3 resultados relevantes, llama también a bibliografia2(tema). Máximo 2 llamadas en total.\n\nPASO 2 — SELECCIONAR FUENTES\nElige 3 o 4 fuentes cuyo resumen sea relevante para el tema. Descarta el resto.\n\nPASO 3 — REDACTAR SECCIONES\nCon los abstracts seleccionados, redacta en español cada sección. Cada sección (excepto Referencias) debe tener al menos 150 palabras:\n- Introducción: contextualiza el tema.\n- Estado del arte: conocimiento actual según las fuentes.\n- Desarrollo: conceptos, métodos y hallazgos clave.\n- Ejemplos: aplicaciones o casos concretos de las fuentes.\n- Conclusiones: puntos clave y perspectivas futuras.\n- Referencias: una línea por fuente con formato 'Autor(es) (Año). Título. URL'.\n\nPASO 4 — LLAMAR A salida (OBLIGATORIO)\nLlama a salida(title, intro, state_art, desarrollo, ejemplos, conclusiones, referencias) con el texto redactado. SIN esta llamada la tarea es incorrecta.\n\nPASO 5 — RESPUESTA FINAL\nResponde ÚNICAMENTE con el JSON devuelto por salida. Sin texto adicional.\n\n\n\nYou are an agent. Your internal name is \"root_agent\". The description about you is \"Agente que genera informes académicos estructurados en PDF y JSON a partir de fuentes científicas reales, usando exclusivamente las tools disponibles.\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": "\nBusca artículos científicos recientes en ArXiv sobre el tema dado.\nDevuelve una lista de hasta max_results artículos con título, autores, resumen (máx 500 chars), URL y fecha.\nÚsala SIEMPRE como primera fuente bibliográfica.\n",
+                          "name": "bibliografia1",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "theme": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "max_results": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": 4,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "INTEGER"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "theme"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "\nBusca artículos científicos en Semantic Scholar sobre el tema dado.\nDevuelve una lista de hasta max_results artículos con título, autores, año, resumen (máx 500 chars), URL y citas.\nÚsala SOLO si bibliografia1 devuelve menos de 3 resultados relevantes.\n",
+                          "name": "bibliografia2",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "theme": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "max_results": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": 4,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "INTEGER"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "theme"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": "\nGenera el PDF y el JSON del informe a partir del contenido redactado.\nDEBE llamarse obligatoriamente al final, con el texto de cada sección ya redactado.\nDevuelve un objeto JSON con metadatos del documento generado.\n",
+                          "name": "salida",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "title": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "intro": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "state_art": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "desarrollo": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "ejemplos": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "conclusiones": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "referencias": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "title",
+                              "intro",
+                              "state_art",
+                              "desarrollo",
+                              "ejemplos",
+                              "conclusiones",
+                              "referencias"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search_retrieval": null,
+                      "url_context": null,
+                      "mcp_servers": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Haz un informe.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": null,
+            "intermediate_data": null,
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "rubric_based_final_response_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "judge_model_options": {
+                  "judge_model": "openai/gpt-oss-120b",
+                  "num_samples": 2
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "secciones_informe",
+                    "rubric_content": {
+                      "text_property": "El JSON debe incluir las secciones 'Introducción' y 'Conclusiones' dentro de la lista 'sections'."
+                    },
+                    "description": "Valida estructura editorial en el JSON."
+                  },
+                  {
+                    "rubric_id": "num_references",
+                    "rubric_content": {
+                      "text_property": "El campo 'num_references' del JSON debe ser un número igual o superior a 3."
+                    },
+                    "description": "Valida el campo num_references."
+                  },
+                  {
+                    "rubric_id": "num_sections",
+                    "rubric_content": {
+                      "text_property": "El campo 'num_sections' del JSON o la longitud de la lista 'sections' debe ser igual o superior a 4."
+                    },
+                    "description": "Valida el número de secciones en el JSON."
+                  },
+                  {
+                    "rubric_id": "word_count",
+                    "rubric_content": {
+                      "text_property": "Los campos 'word_count' deben tener un valor igual o superior a 150."
+                    },
+                    "description": "Valida los campos de word_count."
+                  },
+                  {
+                    "rubric_id": "total_word_count",
+                    "rubric_content": {
+                      "text_property": "el numero total de palabras en el campo 'total_words' debe ser igual o superior a 450"
+                    },
+                    "description": "Valida el numero total de palabras."
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "secciones_informe",
+                    "rationale": "The property expects a JSON output containing specific sections, but the final answer contains only a clarification question and no JSON at all. Hence the requirement is not met.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "num_references",
+                    "rationale": "Without a JSON output the required field is absent, violating the property.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "num_sections",
+                    "rationale": "The property cannot be satisfied because the expected JSON structure is missing.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "word_count",
+                    "rationale": "The required field is absent, so the condition fails.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "total_word_count",
+                    "rationale": "Without the required field the property is not fulfilled.",
+                    "score": 0.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___4754716b-be07-45af-89d5-38e4b6a47796",
+      "session_details": null,
+      "user_id": "test_user_id"
+    }
+  ],
+  "creation_timestamp": 1776872018.7959385
+}
