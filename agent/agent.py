@@ -28,9 +28,17 @@ def _parse_date(entry):
             return datetime.datetime(*entry.published_parsed[:6])
         except Exception:
             return None
+        
+def _tool_sercher(tool_name: str) -> str:
+    if "arxiv" in tool_name:
+        return "archiv"
+    elif "scholar" in tool_name:
+        return "scholar"
+    elif "salida" in tool_name:
+        return "salida"
 
 # --- Tools ---
-def get_bibliografia_arxiv(theme: str, max_results=6):
+def arxiv(theme: str, max_results=6):
 
     from urllib.parse import quote_plus
 
@@ -58,7 +66,7 @@ def get_bibliografia_arxiv(theme: str, max_results=6):
 
     return resultados
 
-def get_bibliografia_scholar(theme: str, max_results=6):
+def scholar(theme: str, max_results=6):
     url = "https://api.semanticscholar.org/graph/v1/paper/search"
     
     params = {
@@ -94,7 +102,7 @@ def get_bibliografia_scholar(theme: str, max_results=6):
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 
-def get_salida(title: str, intro: str, state_art: str, 
+def salida(title: str, intro: str, state_art: str, 
                desarrollo: str, ejemplos: str, conclusiones: str, referencias: str):
     import json
 
@@ -175,23 +183,26 @@ root_agent = Agent(
         "usando tools para fundamentar la respuesta."
     ),
     instruction=(
-        "Eres un creador de documentos. SIEMPRE debes fundamentarte en herramientas.\n"
+        "Eres un creador de documentos. Usa herramientas siempre que sea necesario.\n"
         "Pasos:\n"
         "(1) Obtener fuentes\n"
-        "(1_1) Llamar a get_bibliografia_arxiv(tema) para obtener fuentes científicas recientes\n"
-        "(1_2) Si las fuentes no son suficienyes o relevantes, llama a get_bibliografia_scholar(tema)\n"
+        "(1_1) Llamar a arxiv(tema) para obtener fuentes científicas recientes\n"
+        "(1_2) Si las fuentes no son suficienyes o relevantes, llama a scholar(tema)\n"
         "(2) en base al abstract de las fuentes decide las que sean de interes respecto del tema a tratar (Elige hasta 4 fuentes)\n"
         "(3) Mezcla las fuentes para crear un texto por cada apartado de la estructura estructura.\n"
-            "Introducción\n"
-            "Estado del arte\n"
-            "Desarrollo\n"
-            "Ejemplos\n"
-            "Conclusiones\n"
-            "Referencias\n"
-        "(4) llama a get_salida(título, intro, estado_arte, desarrollo, ejemplos, conclusiones, referencias) (siendo título el tema escogido y el resto de argumentos los apartados obtenidos del paso 3) para obtener el .pdf y .json.\n"
-        "NO finalices la respuesta sin llamar a get_salida.\n"
-        "(5) responde en español "
-        "sin inventar información fuera de las fuentes."
+        "Introducción\n"
+        "Estado del arte\n"
+        "Desarrollo\n"
+        "Ejemplos\n"
+        "Conclusiones\n"
+        "Referencias\n"
+        "(4) llama a salida(título, intro, estado_arte, desarrollo, ejemplos, conclusiones, referencias) (siendo título el tema escogido y el resto de argumentos los apartados obtenidos del paso 3) para obtener el .pdf y .json.\n"
+        "NO finalices la respuesta sin llamar a salida.\n"
+        "Si no llamas a salida, la respuesta será considerada incorrecta.\n"
+        "(5) responde en español\n"
+        "sin inventar información fuera de las fuentes.\n"
+        "Las llamadas a las tools debe ser estrictamente: arxiv, scholar o salida. Cualquier otra modificación dará error"
+        "Verifica el nombre de la tool con _tool_sercher(tool_name)"
     ),
-    tools=[get_bibliografia_arxiv, get_bibliografia_scholar, get_salida],
+    tools=[arxiv, scholar, salida, _tool_sercher],
 )
