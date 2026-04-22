@@ -1,0 +1,1251 @@
+{
+  "eval_set_result_id": "agent_document_generator_manual_1776858685.7891",
+  "eval_set_result_name": "agent_document_generator_manual_1776858685.7891",
+  "eval_set_id": "document_generator_manual",
+  "eval_case_results": [
+    {
+      "eval_set_file": "document_generator_manual",
+      "eval_set_id": "document_generator_manual",
+      "eval_id": "ai_education_basic",
+      "final_eval_status": 2,
+      "eval_metric_results": null,
+      "overall_eval_metric_results": [
+        {
+          "metric_name": "rubric_based_final_response_quality_v1",
+          "threshold": 0.8,
+          "criterion": {
+            "threshold": 0.8,
+            "judge_model_options": {
+              "judge_model": "openai/gpt-oss-120b",
+              "num_samples": 2
+            },
+            "rubrics": [
+              {
+                "rubric_id": "secciones_informe",
+                "rubric_content": {
+                  "text_property": "El JSON debe incluir las secciones 'Introducción' y 'Conclusiones' dentro de la lista 'sections'."
+                },
+                "description": "Valida estructura editorial en el JSON."
+              },
+              {
+                "rubric_id": "num_references",
+                "rubric_content": {
+                  "text_property": "El campo 'num_references' del JSON debe ser un número igual o superior a 3."
+                },
+                "description": "Valida el campo num_references."
+              },
+              {
+                "rubric_id": "num_sections",
+                "rubric_content": {
+                  "text_property": "El campo 'num_sections' del JSON o la longitud de la lista 'sections' debe ser igual o superior a 4."
+                },
+                "description": "Valida el número de secciones en el JSON."
+              },
+              {
+                "rubric_id": "word_count",
+                "rubric_content": {
+                  "text_property": "Los campos 'word_count' deben tener un valor igual o superior a 150."
+                },
+                "description": "Valida los campos de word_count."
+              },
+              {
+                "rubric_id": "total_word_count",
+                "rubric_content": {
+                  "text_property": "el numero total de palabras en el campo 'total_words' debe ser igual o superior a 450"
+                },
+                "description": "Valida el numero total de palabras."
+              }
+            ]
+          },
+          "custom_function_path": null,
+          "score": 0.0,
+          "eval_status": 2,
+          "details": {
+            "rubric_scores": [
+              {
+                "rubric_id": "secciones_informe",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "num_references",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "num_sections",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "word_count",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              },
+              {
+                "rubric_id": "total_word_count",
+                "rationale": "This is an aggregated score derived from individual entries. Please refer to individual entries in each invocation for actual rationale from the model.",
+                "score": 0.0
+              }
+            ]
+          }
+        }
+      ],
+      "eval_metric_result_per_invocation": [
+        {
+          "actual_invocation": {
+            "invocation_id": "e-cab0d466-65dc-4831-9d27-03116647a9ca",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Genera un informe académico sobre Inteligencia Artificial en Educación.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "The returned sources are not really about AI in education; many are unrelated. Need better search query. Maybe use \"Inteligencia Artificial educación aprendizaje adaptativo educación\" Try again with bibliografia2 maybe succeed.",
+                  "thought": true,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "model"
+            },
+            "intermediate_data": {
+              "invocation_events": [
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": "We need to generate academic report on AI in Education. Must fetch sources using bibliografia1 and possibly bibliografia2. Need up to 4 sources. Then synthesize sections and call salida. Let's first call bibliografia1 with theme \"Inteligencia Artificial en Educación\".",
+                        "thought": true,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      },
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "chatcmpl-tool-01e29524ed1c4a9aaaa79d8db2b879aa",
+                          "args": {
+                            "theme": "Inteligencia Artificial en Educación",
+                            "max_results": 5
+                          },
+                          "name": "bibliografia1",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "chatcmpl-tool-01e29524ed1c4a9aaaa79d8db2b879aa",
+                          "name": "bibliografia1",
+                          "response": {
+                            "result": [
+                              {
+                                "titulo": "Grandes modelos de lenguaje: de la predicción de palabras a la comprensión?",
+                                "autores": [
+                                  "Carlos Gómez-Rodríguez"
+                                ],
+                                "resumen": "Large language models, such as the well-known ChatGPT, have brought about an unexpected revolution in the field of artificial intelligence. On the one hand, they have numerous practical applications and enormous potential still to be explored. On the other hand, they are also the subject of debate from scientific, philosophical, and social perspectives: there are doubts about the exact mechanisms of their functioning and their actual capacity for language comprehension, and their applications raise ethical dilemmas. In this chapter, we describe how this technology has been developed and the fundamentals of its operation, allowing us to better understand its capabilities and limitations and to introduce some of the main debates surrounding its development and use.\n  --\n  Los grandes modelos de lenguaje, como el conocido ChatGPT, han supuesto una inesperada revolución en el ámbito de la inteligencia artificial. Por un lado, cuentan con multitud de aplicaciones prácticas y un enorme poten",
+                                "url": "https://arxiv.org/abs/2502.18205v1",
+                                "fecha": "2025-02-25T13:44:49"
+                              },
+                              {
+                                "titulo": "A Review on Explainable Artificial Intelligence for Healthcare: Why, How, and When?",
+                                "autores": [
+                                  "Subrato Bharati",
+                                  "M. Rubaiyat Hossain Mondal",
+                                  "Prajoy Podder"
+                                ],
+                                "resumen": "Artificial intelligence (AI) models are increasingly finding applications in the field of medicine. Concerns have been raised about the explainability of the decisions that are made by these AI models. In this article, we give a systematic analysis of explainable artificial intelligence (XAI), with a primary focus on models that are currently being used in the field of healthcare. The literature search is conducted following the preferred reporting items for systematic reviews and meta-analyses (PRISMA) standards for relevant work published from 1 January 2012 to 02 February 2022. The review analyzes the prevailing trends in XAI and lays out the major directions in which research is headed. We investigate the why, how, and when of the uses of these XAI models and their implications. We present a comprehensive examination of XAI methodologies as well as an explanation of how a trustworthy AI can be derived from describing AI models for healthcare fields. The discussion of this work will",
+                                "url": "https://arxiv.org/abs/2304.04780v1",
+                                "fecha": "2023-04-10T17:40:21"
+                              },
+                              {
+                                "titulo": "Compression, The Fermi Paradox and Artificial Super-Intelligence",
+                                "autores": [
+                                  "Michael Timothy Bennett"
+                                ],
+                                "resumen": "The following briefly discusses possible difficulties in communication with and control of an AGI (artificial general intelligence), building upon an explanation of The Fermi Paradox and preceding work on symbol emergence and artificial general intelligence. The latter suggests that to infer what someone means, an agent constructs a rationale for the observed behaviour of others. Communication then requires two agents labour under similar compulsions and have similar experiences (construct similar solutions to similar tasks). Any non-human intelligence may construct solutions such that any rationale for their behaviour (and thus the meaning of their signals) is outside the scope of what a human is inclined to notice or comprehend. Further, the more compressed a signal, the closer it will appear to random noise. Another intelligence may possess the ability to compress information to the extent that, to us, their signals would appear indistinguishable from noise (an explanation for The F",
+                                "url": "https://arxiv.org/abs/2110.01835v1",
+                                "fecha": "2021-10-05T06:17:02"
+                              },
+                              {
+                                "titulo": "The Artificial Scientist: Logicist, Emergentist, and Universalist Approaches to Artificial General Intelligence",
+                                "autores": [
+                                  "Michael Timothy Bennett",
+                                  "Yoshihiro Maruyama"
+                                ],
+                                "resumen": "We attempt to define what is necessary to construct an Artificial Scientist, explore and evaluate several approaches to artificial general intelligence (AGI) which may facilitate this, conclude that a unified or hybrid approach is necessary and explore two theories that satisfy this requirement to some degree.",
+                                "url": "https://arxiv.org/abs/2110.01831v1",
+                                "fecha": "2021-10-05T05:58:23"
+                              },
+                              {
+                                "titulo": "Edge Intelligence: Paving the Last Mile of Artificial Intelligence with Edge Computing",
+                                "autores": [
+                                  "Zhi Zhou",
+                                  "Xu Chen",
+                                  "En Li",
+                                  "Liekang Zeng",
+                                  "Ke Luo",
+                                  "Junshan Zhang"
+                                ],
+                                "resumen": "With the breakthroughs in deep learning, the recent years have witnessed a booming of artificial intelligence (AI) applications and services, spanning from personal assistant to recommendation systems to video/audio surveillance. More recently, with the proliferation of mobile computing and Internet-of-Things (IoT), billions of mobile and IoT devices are connected to the Internet, generating zillions Bytes of data at the network edge. Driving by this trend, there is an urgent need to push the AI frontiers to the network edge so as to fully unleash the potential of the edge big data. To meet this demand, edge computing, an emerging paradigm that pushes computing tasks and services from the network core to the network edge, has been widely recognized as a promising solution. The resulted new inter-discipline, edge AI or edge intelligence, is beginning to receive a tremendous amount of interest. However, research on edge intelligence is still in its infancy stage, and a dedicated venue fo",
+                                "url": "https://arxiv.org/abs/1905.10083v1",
+                                "fecha": "2019-05-24T08:19:05"
+                              }
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": "We have some sources but none specifically about AI in Education. Need more relevant sources. Let's call bibliografia2 with same theme.",
+                        "thought": true,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      },
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "chatcmpl-tool-a9b86422419243378990d8698e6f63da",
+                          "args": {
+                            "theme": "Inteligencia Artificial en Educación",
+                            "max_results": 10
+                          },
+                          "name": "bibliografia2",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "chatcmpl-tool-a9b86422419243378990d8698e6f63da",
+                          "name": "bibliografia2",
+                          "response": {
+                            "error": "Error en la API"
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": "We got error from bibliografia2. We have only 5 results from bibliografia1 but none directly about AI in Education; they are about LLMs, XAI in healthcare, etc. Need more relevant sources. We could try another call to bibliografia1 with different max_results? Or perhaps adjust theme \"AI education\" etc. We'll try again bibliografia1 with more specific query.",
+                        "thought": true,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      },
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "chatcmpl-tool-8ef3ac8168424027baae72d632885c7f",
+                          "args": {
+                            "theme": "Inteligencia Artificial en Educación aprendizaje adaptativo",
+                            "max_results": 10
+                          },
+                          "name": "bibliografia1",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "chatcmpl-tool-8ef3ac8168424027baae72d632885c7f",
+                          "name": "bibliografia1",
+                          "response": {
+                            "result": [
+                              {
+                                "titulo": "Sistema de Reconocimiento Facial Federado en Conjuntos Abiertos basado en OpenMax",
+                                "autores": [
+                                  "Ander Galván",
+                                  "Marivi Higuero",
+                                  "Jorge Sasiain",
+                                  "Eduardo Jacob"
+                                ],
+                                "resumen": "Facial recognition powered by Artificial Intelligence has achieved high accuracy in specific scenarios and applications. Nevertheless, it faces significant challenges regarding privacy and identity management, particularly when unknown individuals appear in the operational context. This paper presents the design, implementation, and evaluation of a facial recognition system within a federated learning framework tailored to open-set scenarios. The proposed approach integrates the OpenMax algorithm into federated learning, leveraging the exchange of mean activation vectors and local distance measures to reliably distinguish between known and unknown subjects. Experimental results validate the effectiveness of the proposed solution, demonstrating its potential for enhancing privacy-aware and robust facial recognition in distributed environments.\n  --\n  El reconocimiento facial impulsado por Inteligencia Artificial ha demostrado una alta precisión en algunos escenarios y aplicaciones. Sin ",
+                                "url": "https://arxiv.org/abs/2508.19312v1",
+                                "fecha": "2025-08-26T09:27:49"
+                              },
+                              {
+                                "titulo": "Grandes modelos de lenguaje: de la predicción de palabras a la comprensión?",
+                                "autores": [
+                                  "Carlos Gómez-Rodríguez"
+                                ],
+                                "resumen": "Large language models, such as the well-known ChatGPT, have brought about an unexpected revolution in the field of artificial intelligence. On the one hand, they have numerous practical applications and enormous potential still to be explored. On the other hand, they are also the subject of debate from scientific, philosophical, and social perspectives: there are doubts about the exact mechanisms of their functioning and their actual capacity for language comprehension, and their applications raise ethical dilemmas. In this chapter, we describe how this technology has been developed and the fundamentals of its operation, allowing us to better understand its capabilities and limitations and to introduce some of the main debates surrounding its development and use.\n  --\n  Los grandes modelos de lenguaje, como el conocido ChatGPT, han supuesto una inesperada revolución en el ámbito de la inteligencia artificial. Por un lado, cuentan con multitud de aplicaciones prácticas y un enorme poten",
+                                "url": "https://arxiv.org/abs/2502.18205v1",
+                                "fecha": "2025-02-25T13:44:49"
+                              },
+                              {
+                                "titulo": "Acceso abierto en Argentina: una propuesta para el monitoreo de las publicaciones científicas con OpenAlex",
+                                "autores": [
+                                  "Carolina Unzurrunzaga",
+                                  "Carolina Monti",
+                                  "Gastón Zalba",
+                                  "Juan Pablo Alperin"
+                                ],
+                                "resumen": "This study proposes a methodology using OpenAlex (OA) for tracking Open Access publications in the case of Argentina, a country where a self-archiving mandate has been in effect since 2013 ( Law 26.899, 2013). A sample of 167,240 papers by researchers from the National Council for Scientific and Technical Research (CONICET) was created and analyzed using statistical techniques. We estimate that OA is able to capture between 85-93% of authors for all disciplines, with the exception of Social Sciences and Humanities, where it only reaches an estimated 47%. The availability of papers in Open Access was calculated to be 41% for the period 1953-2021 and 46% when considering exclusively the post-law period (2014-2021). In both periods, gold Open Access made up the most common route. When comparing equal periods post and pre-law, we observed that the upward trend of gold Open Access was pre-existing to the legislation and the availability of closed articles in repositories increased by 5% to ",
+                                "url": "https://arxiv.org/abs/2404.19627v1",
+                                "fecha": "2024-04-30T15:26:16"
+                              },
+                              {
+                                "titulo": "Artificial Collective Intelligence Engineering: a Survey of Concepts and Perspectives",
+                                "autores": [
+                                  "Roberto Casadei"
+                                ],
+                                "resumen": "Collectiveness is an important property of many systems--both natural and artificial. By exploiting a large number of individuals, it is often possible to produce effects that go far beyond the capabilities of the smartest individuals, or even to produce intelligent collective behaviour out of not-so-intelligent individuals. Indeed, collective intelligence, namely the capability of a group to act collectively in a seemingly intelligent way, is increasingly often a design goal of engineered computational systems--motivated by recent techno-scientific trends like the Internet of Things, swarm robotics, and crowd computing, just to name a few. For several years, the collective intelligence observed in natural and artificial systems has served as a source of inspiration for engineering ideas, models, and mechanisms. Today, artificial and computational collective intelligence are recognised research topics, spanning various techniques, kinds of target systems, and application domains. Howev",
+                                "url": "https://arxiv.org/abs/2304.05147v1",
+                                "fecha": "2023-04-11T11:22:47"
+                              },
+                              {
+                                "titulo": "A Review on Explainable Artificial Intelligence for Healthcare: Why, How, and When?",
+                                "autores": [
+                                  "Subrato Bharati",
+                                  "M. Rubaiyat Hossain Mondal",
+                                  "Prajoy Podder"
+                                ],
+                                "resumen": "Artificial intelligence (AI) models are increasingly finding applications in the field of medicine. Concerns have been raised about the explainability of the decisions that are made by these AI models. In this article, we give a systematic analysis of explainable artificial intelligence (XAI), with a primary focus on models that are currently being used in the field of healthcare. The literature search is conducted following the preferred reporting items for systematic reviews and meta-analyses (PRISMA) standards for relevant work published from 1 January 2012 to 02 February 2022. The review analyzes the prevailing trends in XAI and lays out the major directions in which research is headed. We investigate the why, how, and when of the uses of these XAI models and their implications. We present a comprehensive examination of XAI methodologies as well as an explanation of how a trustworthy AI can be derived from describing AI models for healthcare fields. The discussion of this work will",
+                                "url": "https://arxiv.org/abs/2304.04780v1",
+                                "fecha": "2023-04-10T17:40:21"
+                              },
+                              {
+                                "titulo": "Creative Problem Solving in Artificially Intelligent Agents: A Survey and Framework",
+                                "autores": [
+                                  "Evana Gizzi",
+                                  "Lakshmi Nair",
+                                  "Sonia Chernova",
+                                  "Jivko Sinapov"
+                                ],
+                                "resumen": "Creative Problem Solving (CPS) is a sub-area within Artificial Intelligence (AI) that focuses on methods for solving off-nominal, or anomalous problems in autonomous systems. Despite many advancements in planning and learning, resolving novel problems or adapting existing knowledge to a new context, especially in cases where the environment may change in unpredictable ways post deployment, remains a limiting factor in the safe and useful integration of intelligent systems. The emergence of increasingly autonomous systems dictates the necessity for AI agents to deal with environmental uncertainty through creativity. To stimulate further research in CPS, we present a definition and a framework of CPS, which we adopt to categorize existing AI methods in this field. Our framework consists of four main components of a CPS problem, namely, 1) problem formulation, 2) knowledge representation, 3) method of knowledge manipulation, and 4) method of evaluation. We conclude our survey with open re",
+                                "url": "https://arxiv.org/abs/2204.10358v1",
+                                "fecha": "2022-04-21T18:31:44"
+                              },
+                              {
+                                "titulo": "Compression, The Fermi Paradox and Artificial Super-Intelligence",
+                                "autores": [
+                                  "Michael Timothy Bennett"
+                                ],
+                                "resumen": "The following briefly discusses possible difficulties in communication with and control of an AGI (artificial general intelligence), building upon an explanation of The Fermi Paradox and preceding work on symbol emergence and artificial general intelligence. The latter suggests that to infer what someone means, an agent constructs a rationale for the observed behaviour of others. Communication then requires two agents labour under similar compulsions and have similar experiences (construct similar solutions to similar tasks). Any non-human intelligence may construct solutions such that any rationale for their behaviour (and thus the meaning of their signals) is outside the scope of what a human is inclined to notice or comprehend. Further, the more compressed a signal, the closer it will appear to random noise. Another intelligence may possess the ability to compress information to the extent that, to us, their signals would appear indistinguishable from noise (an explanation for The F",
+                                "url": "https://arxiv.org/abs/2110.01835v1",
+                                "fecha": "2021-10-05T06:17:02"
+                              },
+                              {
+                                "titulo": "The Artificial Scientist: Logicist, Emergentist, and Universalist Approaches to Artificial General Intelligence",
+                                "autores": [
+                                  "Michael Timothy Bennett",
+                                  "Yoshihiro Maruyama"
+                                ],
+                                "resumen": "We attempt to define what is necessary to construct an Artificial Scientist, explore and evaluate several approaches to artificial general intelligence (AGI) which may facilitate this, conclude that a unified or hybrid approach is necessary and explore two theories that satisfy this requirement to some degree.",
+                                "url": "https://arxiv.org/abs/2110.01831v1",
+                                "fecha": "2021-10-05T05:58:23"
+                              },
+                              {
+                                "titulo": "Edge Intelligence: Paving the Last Mile of Artificial Intelligence with Edge Computing",
+                                "autores": [
+                                  "Zhi Zhou",
+                                  "Xu Chen",
+                                  "En Li",
+                                  "Liekang Zeng",
+                                  "Ke Luo",
+                                  "Junshan Zhang"
+                                ],
+                                "resumen": "With the breakthroughs in deep learning, the recent years have witnessed a booming of artificial intelligence (AI) applications and services, spanning from personal assistant to recommendation systems to video/audio surveillance. More recently, with the proliferation of mobile computing and Internet-of-Things (IoT), billions of mobile and IoT devices are connected to the Internet, generating zillions Bytes of data at the network edge. Driving by this trend, there is an urgent need to push the AI frontiers to the network edge so as to fully unleash the potential of the edge big data. To meet this demand, edge computing, an emerging paradigm that pushes computing tasks and services from the network core to the network edge, has been widely recognized as a promising solution. The resulted new inter-discipline, edge AI or edge intelligence, is beginning to receive a tremendous amount of interest. However, research on edge intelligence is still in its infancy stage, and a dedicated venue fo",
+                                "url": "https://arxiv.org/abs/1905.10083v1",
+                                "fecha": "2019-05-24T08:19:05"
+                              },
+                              {
+                                "titulo": "Un metodo adaptativo para el modelo Bidominio en electrocardiologia",
+                                "autores": [
+                                  "Mostafa Bendahmane",
+                                  "Raimund Bürger",
+                                  "Ricardo Ruiz Baier"
+                                ],
+                                "resumen": "This paper presents a finite-volume method, together with fully adaptive multi-resolution scheme to obtain spatial adaptation, and a Runge-Kutta-Fehlberg scheme with a local time-varying step to obtain temporal adaptation, to solve numerically the known \"bidominio\" equations that model the electrical activity of the tissue in the myocardium. Two simple models are considered for membrane flows and ionic currents. First we define an approximate solution and we verify its convergence to the corresponding weak solution of the continuum problem, obtaining in this way an alternative demonstration that the continuum problem is well-posed. Next we introduce the multiresolution technique and derive an optimal noise reduction threshold. The efficiency and precision of our method is seen in the reduction of machine time, memory usage, and errors in comparison to other methods.\n  -----\n  En este trabajo se presenta un metodo de volumenes finitos enriquecido con un esquema de multiresolucion comple",
+                                "url": "https://arxiv.org/abs/0810.3038v1",
+                                "fecha": "2008-10-16T22:35:05"
+                              }
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": "The returned results are not specifically about AI in Education, most are unrelated. Need to find relevant sources. May need to try other queries. Let's try bibliografia1 with \"Inteligencia Artificial educación\"",
+                        "thought": true,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      },
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": {
+                          "id": "chatcmpl-tool-1723a761859146e6bae120cab5b57fc0",
+                          "args": {
+                            "theme": "Inteligencia Artificial educación aprendizaje adaptativo",
+                            "max_results": 10
+                          },
+                          "name": "bibliografia1",
+                          "partial_args": null,
+                          "will_continue": null
+                        },
+                        "function_response": null,
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "model"
+                  }
+                },
+                {
+                  "author": "root_agent",
+                  "content": {
+                    "parts": [
+                      {
+                        "media_resolution": null,
+                        "code_execution_result": null,
+                        "executable_code": null,
+                        "file_data": null,
+                        "function_call": null,
+                        "function_response": {
+                          "will_continue": null,
+                          "scheduling": null,
+                          "parts": null,
+                          "id": "chatcmpl-tool-1723a761859146e6bae120cab5b57fc0",
+                          "name": "bibliografia1",
+                          "response": {
+                            "result": [
+                              {
+                                "titulo": "Grandes modelos de lenguaje: de la predicción de palabras a la comprensión?",
+                                "autores": [
+                                  "Carlos Gómez-Rodríguez"
+                                ],
+                                "resumen": "Large language models, such as the well-known ChatGPT, have brought about an unexpected revolution in the field of artificial intelligence. On the one hand, they have numerous practical applications and enormous potential still to be explored. On the other hand, they are also the subject of debate from scientific, philosophical, and social perspectives: there are doubts about the exact mechanisms of their functioning and their actual capacity for language comprehension, and their applications raise ethical dilemmas. In this chapter, we describe how this technology has been developed and the fundamentals of its operation, allowing us to better understand its capabilities and limitations and to introduce some of the main debates surrounding its development and use.\n  --\n  Los grandes modelos de lenguaje, como el conocido ChatGPT, han supuesto una inesperada revolución en el ámbito de la inteligencia artificial. Por un lado, cuentan con multitud de aplicaciones prácticas y un enorme poten",
+                                "url": "https://arxiv.org/abs/2502.18205v1",
+                                "fecha": "2025-02-25T13:44:49"
+                              },
+                              {
+                                "titulo": "Artificial Collective Intelligence Engineering: a Survey of Concepts and Perspectives",
+                                "autores": [
+                                  "Roberto Casadei"
+                                ],
+                                "resumen": "Collectiveness is an important property of many systems--both natural and artificial. By exploiting a large number of individuals, it is often possible to produce effects that go far beyond the capabilities of the smartest individuals, or even to produce intelligent collective behaviour out of not-so-intelligent individuals. Indeed, collective intelligence, namely the capability of a group to act collectively in a seemingly intelligent way, is increasingly often a design goal of engineered computational systems--motivated by recent techno-scientific trends like the Internet of Things, swarm robotics, and crowd computing, just to name a few. For several years, the collective intelligence observed in natural and artificial systems has served as a source of inspiration for engineering ideas, models, and mechanisms. Today, artificial and computational collective intelligence are recognised research topics, spanning various techniques, kinds of target systems, and application domains. Howev",
+                                "url": "https://arxiv.org/abs/2304.05147v1",
+                                "fecha": "2023-04-11T11:22:47"
+                              },
+                              {
+                                "titulo": "A Review on Explainable Artificial Intelligence for Healthcare: Why, How, and When?",
+                                "autores": [
+                                  "Subrato Bharati",
+                                  "M. Rubaiyat Hossain Mondal",
+                                  "Prajoy Podder"
+                                ],
+                                "resumen": "Artificial intelligence (AI) models are increasingly finding applications in the field of medicine. Concerns have been raised about the explainability of the decisions that are made by these AI models. In this article, we give a systematic analysis of explainable artificial intelligence (XAI), with a primary focus on models that are currently being used in the field of healthcare. The literature search is conducted following the preferred reporting items for systematic reviews and meta-analyses (PRISMA) standards for relevant work published from 1 January 2012 to 02 February 2022. The review analyzes the prevailing trends in XAI and lays out the major directions in which research is headed. We investigate the why, how, and when of the uses of these XAI models and their implications. We present a comprehensive examination of XAI methodologies as well as an explanation of how a trustworthy AI can be derived from describing AI models for healthcare fields. The discussion of this work will",
+                                "url": "https://arxiv.org/abs/2304.04780v1",
+                                "fecha": "2023-04-10T17:40:21"
+                              },
+                              {
+                                "titulo": "Creative Problem Solving in Artificially Intelligent Agents: A Survey and Framework",
+                                "autores": [
+                                  "Evana Gizzi",
+                                  "Lakshmi Nair",
+                                  "Sonia Chernova",
+                                  "Jivko Sinapov"
+                                ],
+                                "resumen": "Creative Problem Solving (CPS) is a sub-area within Artificial Intelligence (AI) that focuses on methods for solving off-nominal, or anomalous problems in autonomous systems. Despite many advancements in planning and learning, resolving novel problems or adapting existing knowledge to a new context, especially in cases where the environment may change in unpredictable ways post deployment, remains a limiting factor in the safe and useful integration of intelligent systems. The emergence of increasingly autonomous systems dictates the necessity for AI agents to deal with environmental uncertainty through creativity. To stimulate further research in CPS, we present a definition and a framework of CPS, which we adopt to categorize existing AI methods in this field. Our framework consists of four main components of a CPS problem, namely, 1) problem formulation, 2) knowledge representation, 3) method of knowledge manipulation, and 4) method of evaluation. We conclude our survey with open re",
+                                "url": "https://arxiv.org/abs/2204.10358v1",
+                                "fecha": "2022-04-21T18:31:44"
+                              },
+                              {
+                                "titulo": "Compression, The Fermi Paradox and Artificial Super-Intelligence",
+                                "autores": [
+                                  "Michael Timothy Bennett"
+                                ],
+                                "resumen": "The following briefly discusses possible difficulties in communication with and control of an AGI (artificial general intelligence), building upon an explanation of The Fermi Paradox and preceding work on symbol emergence and artificial general intelligence. The latter suggests that to infer what someone means, an agent constructs a rationale for the observed behaviour of others. Communication then requires two agents labour under similar compulsions and have similar experiences (construct similar solutions to similar tasks). Any non-human intelligence may construct solutions such that any rationale for their behaviour (and thus the meaning of their signals) is outside the scope of what a human is inclined to notice or comprehend. Further, the more compressed a signal, the closer it will appear to random noise. Another intelligence may possess the ability to compress information to the extent that, to us, their signals would appear indistinguishable from noise (an explanation for The F",
+                                "url": "https://arxiv.org/abs/2110.01835v1",
+                                "fecha": "2021-10-05T06:17:02"
+                              },
+                              {
+                                "titulo": "The Artificial Scientist: Logicist, Emergentist, and Universalist Approaches to Artificial General Intelligence",
+                                "autores": [
+                                  "Michael Timothy Bennett",
+                                  "Yoshihiro Maruyama"
+                                ],
+                                "resumen": "We attempt to define what is necessary to construct an Artificial Scientist, explore and evaluate several approaches to artificial general intelligence (AGI) which may facilitate this, conclude that a unified or hybrid approach is necessary and explore two theories that satisfy this requirement to some degree.",
+                                "url": "https://arxiv.org/abs/2110.01831v1",
+                                "fecha": "2021-10-05T05:58:23"
+                              },
+                              {
+                                "titulo": "Past Visions of Artificial Futures: One Hundred and Fifty Years under the Spectre of Evolving Machines",
+                                "autores": [
+                                  "Tim Taylor",
+                                  "Alan Dorin"
+                                ],
+                                "resumen": "The influence of Artificial Intelligence (AI) and Artificial Life (ALife) technologies upon society, and their potential to fundamentally shape the future evolution of humankind, are topics very much at the forefront of current scientific, governmental and public debate. While these might seem like very modern concerns, they have a long history that is often disregarded in contemporary discourse. Insofar as current debates do acknowledge the history of these ideas, they rarely look back further than the origin of the modern digital computer age in the 1940s-50s. In this paper we explore the earlier history of these concepts. We focus in particular on the idea of self-reproducing and evolving machines, and potential implications for our own species. We show that discussion of these topics arose in the 1860s, within a decade of the publication of Darwin's The Origin of Species, and attracted increasing interest from scientists, novelists and the general public in the early 1900s. After i",
+                                "url": "https://arxiv.org/abs/1806.01322v1",
+                                "fecha": "2018-06-04T18:52:40"
+                              },
+                              {
+                                "titulo": "Artificial Intelligence Framework for Simulating Clinical Decision-Making: A Markov Decision Process Approach",
+                                "autores": [
+                                  "Casey C. Bennett",
+                                  "Kris Hauser"
+                                ],
+                                "resumen": "In the modern healthcare system, rapidly expanding costs/complexity, the growing myriad of treatment options, and exploding information streams that often do not effectively reach the front lines hinder the ability to choose optimal treatment decisions over time. The goal in this paper is to develop a general purpose (non-disease-specific) computational/artificial intelligence (AI) framework to address these challenges. This serves two potential functions: 1) a simulation environment for exploring various healthcare policies, payment methodologies, etc., and 2) the basis for clinical artificial intelligence - an AI that can think like a doctor. This approach combines Markov decision processes and dynamic decision networks to learn from clinical data and develop complex plans via simulation of alternative sequential decision paths while capturing the sometimes conflicting, sometimes synergistic interactions of various components in the healthcare system. It can operate in partially obse",
+                                "url": "https://arxiv.org/abs/1301.2158v1",
+                                "fecha": "2013-01-10T15:29:59"
+                              },
+                              {
+                                "titulo": "Biological Inspiration for Artificial Immune Systems",
+                                "autores": [
+                                  "Jamie Twycross",
+                                  "Uwe Aickelin"
+                                ],
+                                "resumen": "Artificial immune systems (AISs) to date have generally been inspired by naive biological metaphors. This has limited the effectiveness of these systems. In this position paper two ways in which AISs could be made more biologically realistic are discussed. We propose that AISs should draw their inspiration from organisms which possess only innate immune systems, and that AISs should employ systemic models of the immune system to structure their overall design. An outline of plant and invertebrate immune systems is presented, and a number of contemporary research that more biologically-realistic AISs could have is also discussed.",
+                                "url": "https://arxiv.org/abs/1001.2208v2",
+                                "fecha": "2010-01-13T15:45:07"
+                              },
+                              {
+                                "titulo": "Modeling Belief in Dynamic Systems, Part II: Revision and Update",
+                                "autores": [
+                                  "N Friedman",
+                                  "J. Y. Halpern"
+                                ],
+                                "resumen": "The study of belief change has been an active area in philosophy and AI. In recent years two special cases of belief change, belief revision and belief update, have been studied in detail. In a companion paper (Friedman & Halpern, 1997), we introduce a new framework to model belief change. This framework combines temporal and epistemic modalities with a notion of plausibility, allowing us to examine the change of beliefs over time. In this paper, we show how belief revision and belief update can be captured in our framework. This allows us to compare the assumptions made by each method, and to better understand the principles underlying them. In particular, it shows that Katsuno and Mendelzon's notion of belief update (Katsuno & Mendelzon, 1991a) depends on several strong assumptions that may limit its applicability in artificial intelligence. Finally, our analysis allow us to identify a notion of minimal change that underlies a broad range of belief change operations including revisio",
+                                "url": "https://arxiv.org/abs/cs/9903016v1",
+                                "fecha": "1999-03-24T00:22:01"
+                              }
+                            ]
+                          }
+                        },
+                        "inline_data": null,
+                        "text": null,
+                        "thought": null,
+                        "thought_signature": null,
+                        "video_metadata": null
+                      }
+                    ],
+                    "role": "user"
+                  }
+                }
+              ]
+            },
+            "creation_timestamp": 1776857692.873008,
+            "rubrics": null,
+            "app_details": {
+              "agent_details": {
+                "root_agent": {
+                  "name": "root_agent",
+                  "instructions": "Eres un creador de documentos. Usa herramientas siempre que sea necesario.\nPasos:\n(1) Obtener fuentes\n(1_1) Llamar a bibliografia1(tema) para obtener fuentes científicas recientes\n(1_2) Si las fuentes no son suficienyes o relevantes, llama a bibliografia2(tema)\nSi no has encontrado fuentes después de 4 llamadas entre las dos funciones, termina diciendo que no has encontrado fuentes sobre el tema(2) en base al abstract de las fuentes decide las que sean de interes respecto del tema a tratar (Elige hasta 4 fuentes)\n(3) Mezcla las fuentes para crear un texto por cada apartado de la estructura estructura.\nIntroducción\nEstado del arte\nDesarrollo\nEjemplos\nConclusiones\nReferencias\n(4) llama a salida(título, intro, estado_arte, desarrollo, ejemplos, conclusiones, referencias) (siendo título el tema escogido y el resto de argumentos los apartados obtenidos del paso 3) para obtener el .pdf y .json.\nNO finalices la respuesta sin llamar a salida.\nSi no llamas a salida, la respuesta será considerada incorrecta.\nTu mensaje de respuesta será el obtenido de la tool salida\n(5) responde en español\nsin inventar información fuera de las fuentes.\nIMPORTANTE Para llamar a las tools debes usar estos nombres ESTRICTAMENTE:\nbibliografia1\nbibliografia2\nsalida\n\n\nYou are an agent. Your internal name is \"root_agent\". The description about you is \"Diseñar un documento sobre el tema que se te plantee, con una salida sencilla de entenderusando tools para fundamentar la respuesta.\".",
+                  "tool_declarations": [
+                    {
+                      "retrieval": null,
+                      "computer_use": null,
+                      "file_search": null,
+                      "google_search": null,
+                      "code_execution": null,
+                      "enterprise_web_search": null,
+                      "function_declarations": [
+                        {
+                          "description": null,
+                          "name": "bibliografia1",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "theme": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "max_results": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": null
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": null,
+                          "name": "bibliografia2",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "theme": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "max_results": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": null
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": null,
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        },
+                        {
+                          "description": null,
+                          "name": "salida",
+                          "parameters": {
+                            "additional_properties": null,
+                            "defs": null,
+                            "ref": null,
+                            "any_of": null,
+                            "default": null,
+                            "description": null,
+                            "enum": null,
+                            "example": null,
+                            "format": null,
+                            "items": null,
+                            "max_items": null,
+                            "max_length": null,
+                            "max_properties": null,
+                            "maximum": null,
+                            "min_items": null,
+                            "min_length": null,
+                            "min_properties": null,
+                            "minimum": null,
+                            "nullable": null,
+                            "pattern": null,
+                            "properties": {
+                              "title": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "intro": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "state_art": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "desarrollo": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "ejemplos": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "conclusiones": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              },
+                              "referencias": {
+                                "additional_properties": null,
+                                "defs": null,
+                                "ref": null,
+                                "any_of": null,
+                                "default": null,
+                                "description": null,
+                                "enum": null,
+                                "example": null,
+                                "format": null,
+                                "items": null,
+                                "max_items": null,
+                                "max_length": null,
+                                "max_properties": null,
+                                "maximum": null,
+                                "min_items": null,
+                                "min_length": null,
+                                "min_properties": null,
+                                "minimum": null,
+                                "nullable": null,
+                                "pattern": null,
+                                "properties": null,
+                                "property_ordering": null,
+                                "required": null,
+                                "title": null,
+                                "type": "STRING"
+                              }
+                            },
+                            "property_ordering": null,
+                            "required": [
+                              "title",
+                              "intro",
+                              "state_art",
+                              "desarrollo",
+                              "ejemplos",
+                              "conclusiones",
+                              "referencias"
+                            ],
+                            "title": null,
+                            "type": "OBJECT"
+                          },
+                          "parameters_json_schema": null,
+                          "response": null,
+                          "response_json_schema": null,
+                          "behavior": null
+                        }
+                      ],
+                      "google_maps": null,
+                      "google_search_retrieval": null,
+                      "url_context": null,
+                      "mcp_servers": null
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "expected_invocation": {
+            "invocation_id": "",
+            "user_content": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "Genera un informe académico sobre Inteligencia Artificial en Educación.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null
+                }
+              ],
+              "role": "user"
+            },
+            "final_response": null,
+            "intermediate_data": null,
+            "creation_timestamp": 0.0,
+            "rubrics": null,
+            "app_details": null
+          },
+          "eval_metric_results": [
+            {
+              "metric_name": "rubric_based_final_response_quality_v1",
+              "threshold": 0.8,
+              "criterion": {
+                "threshold": 0.8,
+                "judge_model_options": {
+                  "judge_model": "openai/gpt-oss-120b",
+                  "num_samples": 2
+                },
+                "rubrics": [
+                  {
+                    "rubric_id": "secciones_informe",
+                    "rubric_content": {
+                      "text_property": "El JSON debe incluir las secciones 'Introducción' y 'Conclusiones' dentro de la lista 'sections'."
+                    },
+                    "description": "Valida estructura editorial en el JSON."
+                  },
+                  {
+                    "rubric_id": "num_references",
+                    "rubric_content": {
+                      "text_property": "El campo 'num_references' del JSON debe ser un número igual o superior a 3."
+                    },
+                    "description": "Valida el campo num_references."
+                  },
+                  {
+                    "rubric_id": "num_sections",
+                    "rubric_content": {
+                      "text_property": "El campo 'num_sections' del JSON o la longitud de la lista 'sections' debe ser igual o superior a 4."
+                    },
+                    "description": "Valida el número de secciones en el JSON."
+                  },
+                  {
+                    "rubric_id": "word_count",
+                    "rubric_content": {
+                      "text_property": "Los campos 'word_count' deben tener un valor igual o superior a 150."
+                    },
+                    "description": "Valida los campos de word_count."
+                  },
+                  {
+                    "rubric_id": "total_word_count",
+                    "rubric_content": {
+                      "text_property": "el numero total de palabras en el campo 'total_words' debe ser igual o superior a 450"
+                    },
+                    "description": "Valida el numero total de palabras."
+                  }
+                ]
+              },
+              "custom_function_path": null,
+              "score": 0.0,
+              "eval_status": 2,
+              "details": {
+                "rubric_scores": [
+                  {
+                    "rubric_id": "secciones_informe",
+                    "rationale": "Because no procedurally sound tool call produced a JSON output, there is no trusted evidence that the required sections exist. The final answer therefore fails to meet the property.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "num_references",
+                    "rationale": "Absence of a JSON output means the required field cannot be present or verified, resulting in non‑fulfilment of the property.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "num_sections",
+                    "rationale": "Without a JSON output, the condition cannot be satisfied, so the property is not met.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "word_count",
+                    "rationale": "The required fields are missing, so the property is not fulfilled.",
+                    "score": 0.0
+                  },
+                  {
+                    "rubric_id": "total_word_count",
+                    "rationale": "The absence of the field means the condition cannot be satisfied; the property fails.",
+                    "score": 0.0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "session_id": "___eval___session___4656c67b-3257-432f-987b-ecede3053649",
+      "session_details": null,
+      "user_id": "test_user_id"
+    }
+  ],
+  "creation_timestamp": 1776858685.7891
+}

@@ -29,16 +29,9 @@ def _parse_date(entry):
         except Exception:
             return None
         
-def _tool_searcher(tool_name: str) -> str:
-    if "arxiv" in tool_name:
-        return "archiv"
-    elif "scholar" in tool_name:
-        return "scholar"
-    elif "salida" in tool_name:
-        return "salida"
 
 # --- Tools ---
-def arxiv(theme: str, max_results=6):
+def bibliografia1(theme: str, max_results=6):
 
     from urllib.parse import quote_plus
 
@@ -66,7 +59,7 @@ def arxiv(theme: str, max_results=6):
 
     return resultados
 
-def scholar(theme: str, max_results=6):
+def bibliografia2(theme: str, max_results=6):
     url = "https://api.semanticscholar.org/graph/v1/paper/search"
     
     params = {
@@ -165,10 +158,6 @@ def salida(title: str, intro: str, state_art: str,
         json.dump(data, f, ensure_ascii=False, indent=4)
 
     return data
-    #{
-    #    "pdf": pdf_path,
-    #    "json": json_path
-    #}
 
 # ---------------------------
 # Root agent
@@ -189,8 +178,9 @@ root_agent = Agent(
         "Eres un creador de documentos. Usa herramientas siempre que sea necesario.\n"
         "Pasos:\n"
         "(1) Obtener fuentes\n"
-        "(1_1) Llamar a arxiv(tema) para obtener fuentes científicas recientes\n"
-        "(1_2) Si las fuentes no son suficienyes o relevantes, llama a scholar(tema)\n"
+        "(1_1) Llamar a bibliografia1(tema) para obtener fuentes científicas recientes\n"
+        "(1_2) Si las fuentes no son suficienyes o relevantes, llama a bibliografia2(tema)\n"
+        "Si no has encontrado fuentes después de 4 llamadas entre las dos funciones, termina diciendo que no has encontrado fuentes sobre el tema"
         "(2) en base al abstract de las fuentes decide las que sean de interes respecto del tema a tratar (Elige hasta 4 fuentes)\n"
         "(3) Mezcla las fuentes para crear un texto por cada apartado de la estructura estructura.\n"
         "Introducción\n"
@@ -202,10 +192,13 @@ root_agent = Agent(
         "(4) llama a salida(título, intro, estado_arte, desarrollo, ejemplos, conclusiones, referencias) (siendo título el tema escogido y el resto de argumentos los apartados obtenidos del paso 3) para obtener el .pdf y .json.\n"
         "NO finalices la respuesta sin llamar a salida.\n"
         "Si no llamas a salida, la respuesta será considerada incorrecta.\n"
+        "Tu mensaje de respuesta será el obtenido de la tool salida\n"
         "(5) responde en español\n"
         "sin inventar información fuera de las fuentes.\n"
-        "Las llamadas a las tools debe ser estrictamente: arxiv, scholar o salida. Cualquier otra modificación dará error"
-        "Verifica el nombre de la tool con _tool_sercher(tool_name)"
+        "IMPORTANTE Para llamar a las tools debes usar estos nombres ESTRICTAMENTE:\n"
+        "bibliografia1\n"
+        "bibliografia2\n"
+        "salida\n"
     ),
-    tools=[arxiv, scholar, salida, _tool_searcher],
+    tools=[bibliografia1, bibliografia2, salida],
 )
